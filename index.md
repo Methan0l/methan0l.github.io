@@ -4,7 +4,7 @@ A dynamically-typed multi-paradigm interpreted programming language.
 
 ## Language Reference Documentation  
 
-Available [here](https://hitonoriol.github.io/methan0l-docs/).  
+Available [here](./docs).  
 
 
 ## How to Use the Interpreter CLI
