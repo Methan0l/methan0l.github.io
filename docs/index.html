@@ -1,0 +1,3209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc-markdown-css-theme" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Methan0l" />
+  <title>Methan0l Reference Documentation</title>
+  <style type="text/css">
+:root {
+
+color-scheme: dark;
+--background-color: #fff;
+--color-text: #1b2733;
+--color-text-secondary: #637282;
+--color-link: #0070e0;
+--color-sidenote: #616970;
+--highlight-red: #ea9999;
+--highlight-yellow: #ffe599;
+--highlight-green: #b6d7a8;
+--highlight-blue: #a4c2f4;
+--highlight-purple: #b4a7d6;
+--color-inline-code: #1b2733;
+--color-inline-code-bg: #f3f3f8;
+--color-border: #dfdfd0;
+--color-border-heavy: #ccccd4;
+--color-table-heading: #f3f3fb;
+
+--font-family-prose: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+--font-family-heading: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+--font-family-code: Menlo, monospace;
+--side-note-number-font-family: var(--font-family-prose);
+--line-height: 26px;
+--font-size: 17px;
+--inline-code-font-size: 15px;
+--code-block-font-size: 14px;
+--code-block-side-padding: 8px;
+--line-numbers-font-size: 12px;
+--tight-code-line-height: 18px;
+--tight-code-padding-top: 5px;
+--side-note-line-height: 20px;
+--side-note-font-size: 13px;
+--side-note-code-font-size: 13px;
+--side-note-baseline-offset: 4px;
+--side-note-sup-offset: -6px;
+--side-note-number-hang-left: -6px;
+--side-note-text-indent: -9px;
+--heading-font-weight: 500;
+--title-font-size: 42px;
+--title-code-font-size: 40px;
+--title-line-height: 48px;
+--title-margin-top: 92px;
+--h1-font-size: 32px;
+--h1-code-font-size: 29px;
+--h1-line-height: 36px;
+--h1-word-spacing: 1px;
+--h1-margin-top: 30px;
+--h1-margin-bottom: 12px;
+--h2-font-size: 22px;
+--h2-code-font-size: 20px;
+--h2-line-height: 28px;
+--h2-word-spacing: 0.5px;
+--h2-margin-top: 18px;
+--h2-margin-bottom: 6px;
+--ul-indent-size: 23px;
+--ol-indent-size: 19px;
+--ol-li-padding-left: 4px;
+--hr-margin-top: 18px;
+--hr-margin-bottom: calc(var(--line-height) - var(--hr-margin-top) - 1px);
+--extra-wide-scale-factor: 1.5;
+--figcaption-line-height: 21px;
+--figcaption-font-size: 14px;
+--figcaption-code-font-size: 13px;
+--figcaption-gap: 6px;
+--captioned-figure-gap: 10px;
+--table-line-height: 21px;
+--table-font-size: 14px;
+--table-code-font-size: 13px;
+--nav-toc-font-size: 12px;
+--nav-toc-code-font-size: 12px;
+--nav-toc-indent: 15px;
+--nav-toc-baseline-offset: 2px;
+
+--main-width: 745px;
+
+--main-width-narrow: 550px;
+--side-note-max-width: 300px;
+}
+@media (prefers-color-scheme: dark) {
+:root {
+--background-color: #161313;
+--color-text: #f7f5f2;
+--color-text-secondary: #9d9b99;
+--color-link: #2994ff;
+--color-sidenote: #b4b2af;
+--highlight-red: #660000;
+--highlight-yellow: #7f6000;
+--highlight-green: #274e13;
+--highlight-blue: #1c4587;
+--highlight-purple: #351c75;
+--color-inline-code: #f7f5f2;
+--color-inline-code-bg: #242121;
+--color-border: #393635;
+--color-border-heavy: #524f4d;
+--color-table-heading: #242121;
+}
+}
+*, *:after, *:before {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+html {
+
+-webkit-text-size-adjust: 100%;
+}
+body {
+font-family: var(--font-family-prose);
+color: var(--color-text);
+font-size: var(--font-size);
+line-height: var(--line-height);
+-webkit-font-variant-ligatures: no-common-ligatures;
+font-variant-ligatures: no-common-ligatures;
+
+hanging-punctuation: first;
+margin: 0;
+padding: 0;
+padding-top: var(--title-margin-top);
+width: 100%;
+background-color: var(--background-color);
+}
+@media print {
+body {
+background-color: initial;
+}
+}
+
+
+.only-light-mode {
+display: inherit;
+}
+.only-dark-mode {
+display: none;
+}
+@media (prefers-color-scheme: dark) {
+.only-light-mode {
+display: none;
+}
+.only-dark-mode {
+display: inherit;
+}
+}
+
+
+
+.sidenote,
+.marginnote {
+color: var(--color-sidenote);
+font-size: var(--side-note-font-size);
+line-height: var(--side-note-line-height);
+vertical-align: baseline;
+
+margin-top: var(--side-note-baseline-offset);
+}
+.sidenote code,
+.marginnote code {
+color: var(--color-sidenote);
+}
+main {
+counter-reset: sidenote-counter;
+}
+.sidenote-number {
+counter-increment: sidenote-counter;
+}
+.sidenote-number:after,
+.sidenote:before {
+content: counter(sidenote-counter);
+position: relative;
+}
+nav#TOC label,
+label.margin-toggle:not(.sidenote-number),
+.sidenote-number:after,
+.sidenote:before,
+.footnote-ref sup,
+sup {
+font-size: var(--side-note-font-size);
+font-weight: 700;
+font-family: var(--side-note-number-font-family);
+-webkit-font-feature-settings: "tnum" 1;
+font-feature-settings: "tnum" 1;
+
+vertical-align: baseline;
+position: relative;
+top: var(--side-note-sup-offset);
+}
+sup {
+font-weight: inherit;
+}
+
+.sidenote:before { left: var(--side-note-number-hang-left); }
+
+.sidenote { text-indent: var(--side-note-text-indent); }
+
+
+input.margin-toggle {
+display: none;
+}
+label.margin-toggle:not(.sidenote-number) {
+display: none;
+}
+label.sidenote-number {
+display: inline;
+}
+
+@media screen and (max-width: calc(26px + 550px + 26px + 169px + 26px - 1px)) {
+.margin-toggle:checked + .sidenote,
+.margin-toggle:checked + .marginnote {
+margin-top: var(--side-note-line-height);
+vertical-align: baseline;
+}
+label.margin-toggle {
+color: var(--color-link);
+}
+label.margin-toggle:not(.sidenote-number) {
+display: inline;
+}
+label {
+cursor: pointer;
+}
+}
+
+
+
+h1, h2 {
+font-family: var(--font-family-heading);
+font-weight: var(--heading-font-weight);
+}
+h4, h5, h6 {
+font-weight: bold;
+}
+h1.title {
+margin-top: var(--line-height);
+margin-bottom: var(--line-height);
+font-size: var(--title-font-size);
+line-height: var(--title-line-height);
+}
+h1.title code {
+font-size: var(--title-code-font-size);
+}
+h1:not(.title) {
+font-size: var(--h1-font-size);
+line-height: var(--h1-line-height);
+word-spacing: var(--h1-word-spacing);
+margin-top: var(--h1-margin-top);
+margin-bottom: var(--h1-margin-bottom);
+}
+h1:not(.title) code {
+font-size: var(--h1-code-font-size);
+}
+h2 {
+font-size: var(--h2-font-size);
+line-height: var(--h2-line-height);
+word-spacing: var(--h2-word-spacing);
+margin-top: var(--h2-margin-top);
+margin-bottom: var(--h2-margin-bottom);
+}
+h2 code {
+font-size: var(--h2-code-font-size);
+}
+h3 {
+font-size: var(--font-size);
+line-height: var(--line-height);
+font-weight: bold;
+}
+h1:not(.title) + *, h1:not(.title) + p { margin-top: var(--h1-margin-bottom); }
+h2 + *, h2 + p { margin-top: var(--h2-margin-bottom); }
+h3 + *, h3 + p { margin-top: 0; }
+
+
+p, main > ul, main > ol, div.sourceCode, main > pre, img, table {
+margin-top: var(--line-height);
+margin-bottom: var(--line-height)
+}
+ul:not(.task-list) {
+margin-left: var(--ul-indent-size);
+}
+ol {
+margin-left: var(--ol-indent-size);
+}
+ul.task-list {
+list-style: none;
+margin-left: var(--ul-indent-size);
+}
+ul.task-list > li {
+position: relative;
+}
+ul.task-list > li > input[type="checkbox"] {
+position: absolute;
+left: calc(-1 * var(--ul-indent-size));
+height: var(--line-height);
+}
+ol > li {
+padding-left: var(--ol-li-padding-left);
+}
+ol { list-style-type: decimal; }
+ol ol { list-style-type: lower-alpha; }
+ol ol ol { list-style-type: lower-roman; }
+ol ol ol ol { list-style-type: decimal; }
+ol ol ol ol ol { list-style-type: lower-alpha; }
+ol ol ol ol ol ol { list-style-type: lower-roman; }
+ol ol ol ol ol ol ol { list-style-type: decimal; }
+ol ol ol ol ol ol ol ol { list-style-type: lower-alpha; }
+ol ol ol ol ol ol ol ol ol { list-style-type: lower-roman; }
+ul { list-style-type: disc; }
+ul ul { list-style-type: circle; }
+ul ul ul { list-style-type: square; }
+ul ul ul ul { list-style-type: disc; }
+ul ul ul ul ul { list-style-type: circle; }
+ul ul ul ul ul ul { list-style-type: square; }
+ul ul ul ul ul ul ul { list-style-type: disc; }
+ul ul ul ul ul ul ul ul { list-style-type: circle; }
+ul ul ul ul ul ul ul ul ul { list-style-type: square; }
+blockquote {
+border-left: 1px solid var(--color-text-secondary);
+padding-left: 1.5rem;
+font-style: italic;
+}
+blockquote > p {
+margin-top: 0;
+}
+blockquote em, blockquote i, blockquote .sidenote-wrapper {
+font-style: normal;
+}
+hr {
+margin-top: var(--hr-margin-top);
+margin-bottom: var(--hr-margin-bottom);
+border-style: solid;
+color: var(--color-border-heavy);
+border-width: 1px 0 0;
+}
+a code, a:link code, a:visited code,
+a, a:link, a:visited {
+color: var(--color-link);
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+span.mark, mark {
+
+color: inherit;
+padding: 2px 0 1px;
+}
+span.mark.red, mark.red { background-color: var(--highlight-red); }
+span.mark.yellow, mark.yellow { background-color: var(--highlight-yellow); }
+span.mark.green, mark.green { background-color: var(--highlight-green); }
+span.mark.blue, mark.blue { background-color: var(--highlight-blue); }
+span.mark.purple, mark.purple { background-color: var(--highlight-purple); }
+.subtitle {
+margin-top: 0;
+}
+.author, .date {
+margin-top: 0;
+margin-bottom: 0;
+}
+.signoff {
+margin-top: calc(4 * var(--line-height));
+margin-bottom: calc(4 * var(--line-height));
+}
+
+span.smallcaps{ font-variant: small-caps; }
+span.underline{ text-decoration: underline; }
+.katex-display {
+background: var(--background-color);
+transform: translateZ(0px);
+}
+@media print {
+.katex-display {
+background-color: initial;
+}
+}
+
+
+
+code {
+font-family: var(--font-family-code);
+word-spacing: normal;
+
+color: var(--color-inline-code);
+background-color: var(--color-inline-code-bg);
+font-size: var(--inline-code-font-size);
+margin: 0;
+padding: 2px 0 1px;
+border: 1px solid var(--color-border);
+border-radius: 1px;
+}
+.sidenote code,
+.marginnote code {
+font-size: var(--side-note-code-font-size);
+}
+pre code {
+
+color: inherit;
+background-color: inherit;
+font-size: var(--code-block-font-size);
+line-height: var(--line-height);
+margin: initial;
+padding: initial;
+border: initial;
+border-radius: initial;
+}
+pre > code {
+position: relative; 
+display: inline-block;
+min-width: 100%;
+z-index: 1;
+white-space: pre-wrap;
+padding: 0 var(--code-block-side-padding);
+}
+code.sourceCode::selection {
+
+background: transparent;
+}
+.wide > pre, .wide > div.sourceCode {
+
+transform: translateZ(0px);
+}
+.wide pre > code {
+white-space: pre;
+}
+pre.numberSource code {
+counter-reset: source-line 0;
+}
+pre > code.sourceCode > span {
+line-height: var(--line-height);
+display: inline-block;
+min-width: 100%;
+}
+div.sourceCode {
+
+--line-numbers-width: calc(4 * var(--line-numbers-font-size));
+--line-numbers-negative-width: calc(-1 * var(--line-numbers-width));
+margin-left: var(--line-numbers-negative-width);
+}
+div.sourceCode > pre {
+margin-left: var(--line-numbers-width);
+}
+pre.numberSource > code.sourceCode > span {
+counter-increment: source-line;
+padding-left: var(--line-numbers-width);
+text-indent: var(--line-numbers-negative-width);
+position: relative;
+left: var(--line-numbers-negative-width);
+}
+pre.numberSource > code.sourceCode > span > a:first-child::before {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+content: counter(source-line);
+font-size: var(--line-numbers-font-size);
+text-decoration: none;
+position: relative;
+text-align: right;
+display: inline-block;
+padding: 0 calc(2 * var(--code-block-side-padding));
+width: var(--line-numbers-width);
+}
+pre > code.sourceCode > span > a:first-child::before:hover {
+text-decoration: underline;
+}
+
+.tight-code pre,
+pre.tight-code {
+padding-top: var(--tight-code-padding-top);
+}
+pre.tight-code code,
+.tight-code pre code,
+.tight-code pre > code.sourceCode > span,
+pre.tight-code > code.sourceCode > span {
+line-height: var(--tight-code-line-height);
+}
+
+
+pre > code.sourceCode > span::after {
+position: absolute;
+background-color: var(--color-code-highlight-bg);
+z-index: -1;
+left: calc(var(--line-numbers-width) - var(--code-block-side-padding));
+right: calc(var(--line-numbers-negative-width) - var(--code-block-side-padding));
+top: 0;
+height: 100%;
+}
+pre.hl-1 > code.sourceCode > span:nth-of-type(1)::after { content: ""; }
+pre.hl-2 > code.sourceCode > span:nth-of-type(2)::after { content: ""; }
+pre.hl-3 > code.sourceCode > span:nth-of-type(3)::after { content: ""; }
+pre.hl-4 > code.sourceCode > span:nth-of-type(4)::after { content: ""; }
+pre.hl-5 > code.sourceCode > span:nth-of-type(5)::after { content: ""; }
+pre.hl-6 > code.sourceCode > span:nth-of-type(6)::after { content: ""; }
+pre.hl-7 > code.sourceCode > span:nth-of-type(7)::after { content: ""; }
+pre.hl-8 > code.sourceCode > span:nth-of-type(8)::after { content: ""; }
+pre.hl-9 > code.sourceCode > span:nth-of-type(9)::after { content: ""; }
+pre.hl-10 > code.sourceCode > span:nth-of-type(10)::after { content: ""; }
+pre.hl-11 > code.sourceCode > span:nth-of-type(11)::after { content: ""; }
+pre.hl-12 > code.sourceCode > span:nth-of-type(12)::after { content: ""; }
+pre.hl-13 > code.sourceCode > span:nth-of-type(13)::after { content: ""; }
+pre.hl-14 > code.sourceCode > span:nth-of-type(14)::after { content: ""; }
+pre.hl-15 > code.sourceCode > span:nth-of-type(15)::after { content: ""; }
+pre.hl-16 > code.sourceCode > span:nth-of-type(16)::after { content: ""; }
+pre.hl-17 > code.sourceCode > span:nth-of-type(17)::after { content: ""; }
+pre.hl-18 > code.sourceCode > span:nth-of-type(18)::after { content: ""; }
+pre.hl-19 > code.sourceCode > span:nth-of-type(19)::after { content: ""; }
+pre.hl-20 > code.sourceCode > span:nth-of-type(20)::after { content: ""; }
+pre.hl-21 > code.sourceCode > span:nth-of-type(21)::after { content: ""; }
+pre.hl-22 > code.sourceCode > span:nth-of-type(22)::after { content: ""; }
+pre.hl-23 > code.sourceCode > span:nth-of-type(23)::after { content: ""; }
+pre.hl-24 > code.sourceCode > span:nth-of-type(24)::after { content: ""; }
+pre.hl-25 > code.sourceCode > span:nth-of-type(25)::after { content: ""; }
+pre.hl-26 > code.sourceCode > span:nth-of-type(26)::after { content: ""; }
+pre.hl-27 > code.sourceCode > span:nth-of-type(27)::after { content: ""; }
+pre.hl-28 > code.sourceCode > span:nth-of-type(28)::after { content: ""; }
+pre.hl-29 > code.sourceCode > span:nth-of-type(29)::after { content: ""; }
+pre.hl-30 > code.sourceCode > span:nth-of-type(30)::after { content: ""; }
+pre.hl-31 > code.sourceCode > span:nth-of-type(31)::after { content: ""; }
+pre.hl-32 > code.sourceCode > span:nth-of-type(32)::after { content: ""; }
+pre.hl-33 > code.sourceCode > span:nth-of-type(33)::after { content: ""; }
+pre.hl-34 > code.sourceCode > span:nth-of-type(34)::after { content: ""; }
+pre.hl-35 > code.sourceCode > span:nth-of-type(35)::after { content: ""; }
+pre.hl-36 > code.sourceCode > span:nth-of-type(36)::after { content: ""; }
+pre.hl-37 > code.sourceCode > span:nth-of-type(37)::after { content: ""; }
+pre.hl-38 > code.sourceCode > span:nth-of-type(38)::after { content: ""; }
+pre.hl-39 > code.sourceCode > span:nth-of-type(39)::after { content: ""; }
+pre.hl-40 > code.sourceCode > span:nth-of-type(40)::after { content: ""; }
+
+
+
+
+figure {
+margin-bottom: var(--captioned-figure-gap);
+}
+figure + p {
+margin-top: var(--captioned-figure-gap);
+}
+figure > img, figure > pre, figure > div.sourceCode {
+margin-bottom: var(--figcaption-gap);
+}
+img {
+width: 100%;
+display: block;
+}
+.wide img {
+
+transform: translateZ(0px);
+}
+figcaption {
+font-size: var(--figcaption-font-size);
+line-height: var(--figcaption-line-height);
+font-style: italic;
+text-align: center;
+color: var(--color-text-secondary);
+}
+.left-align-caption figcaption {
+text-align: left;
+}
+figcaption code {
+font-size: var(--figcaption-code-font-size);
+}
+
+
+table {
+-webkit-font-feature-settings: "tnum" 1;
+font-feature-settings: "tnum" 1;
+font-size: var(--table-font-size);
+line-height: var(--table-line-height);
+border-spacing: 0;
+border-collapse: collapse;
+border: 1px solid var(--color-border-heavy);
+width: 100%;
+
+background-color: var(--background-color);
+}
+@media print {
+table {
+background-color: initial;
+}
+}
+table code {
+font-size: var(--table-code-font-size);
+}
+table pre code {
+font-size: inherit;
+}
+.wide table {
+
+transform: translateZ(0px);
+}
+table td, table th {
+border: 1px solid var(--color-border-heavy);
+padding: 5px 8px;
+min-width: 100px;
+}
+table th {
+background-color: var(--color-table-heading);
+}
+table > caption {
+caption-side: bottom;
+margin-top: var(--figcaption-gap);
+margin-bottom: calc(var(--captioned-figure-gap) - var(--line-height));
+font-size: var(--figcaption-font-size);
+line-height: var(--figcaption-line-height);
+font-style: italic;
+text-align: center;
+color: var(--color-text-secondary);
+}
+.left-align-caption table > caption {
+text-align: left;
+}
+table > caption code {
+font-size: var(--figcaption-code-font-size);
+}
+
+.note table {
+font-size: inherit;
+line-height: inherit;
+}
+.note table, .note td {
+border: none;
+}
+.note.red td { background: var(--highlight-red); }
+.note.yellow td { background: var(--highlight-yellow); }
+.note.green td { background: var(--highlight-green); }
+.note.blue td { background: var(--highlight-blue); }
+.note.purple td { background: var(--highlight-purple); }
+
+
+.date.before-toc {
+padding-bottom: var(--line-height);
+}
+nav#TOC {
+margin-bottom: var(--line-height);
+border-left: 1px solid var(--color-text-secondary);
+padding-left: 1.5rem;
+}
+nav#TOC input {
+display: none;
+}
+nav#TOC label {
+color: var(--color-link);
+cursor: pointer;
+}
+nav#TOC > ul {
+display: none;
+}
+nav#TOC > input:checked + ul {
+display: block;
+}
+@media print {
+nav#TOC > input + ul {
+display: block;
+}
+}
+
+@media screen and (min-width: calc(745px + 2 * (52px + 206px + 52px) - 1px)) {
+header {
+margin-bottom: var(--line-height);
+}
+.date.before-toc {
+padding-bottom: initial;
+}
+nav#TOC {
+
+margin-bottom: initial;
+border-left: initial;
+padding-left: initial;
+position: sticky;
+margin-top: calc(var(--nav-toc-baseline-offset));
+float: left;
+top: var(--line-height);
+font-size: var(--nav-toc-font-size);
+color: var(--color-text-secondary);
+margin-left: var(--line-height);
+max-width: calc((100vw - var(--main-width)) / 2 - 2 * var(--line-height));
+max-height: calc(100vh - 2 * var(--line-height));
+overflow-y: auto;
+}
+nav#TOC label {
+display: none;
+}
+nav#TOC ul {
+display: block;
+list-style: none;
+margin-left: var(--nav-toc-indent);
+}
+nav#TOC > ul {
+margin-left: 0;
+}
+nav#TOC li {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+nav#TOC code {
+font-size: var(--nav-toc-code-font-size);
+}
+nav#TOC code,
+nav#TOC a,
+nav#TOD a:link,
+nav#TOD a:visited {
+color: var(--color-text-secondary);
+}
+nav#TOC a:hover,
+nav#TOC a:hover code {
+text-decoration: none;
+color: var(--color-link);
+}
+}
+
+
+.sidenote,
+.marginnote {
+float: right;
+clear: right;
+position: relative;
+width: var(--computed-width);
+max-width: var(--side-note-max-width);
+margin-right: calc(-1 * min(var(--computed-width), var(--side-note-max-width)) - var(--margin-left));
+}
+
+
+@media screen and (min-width: calc(745px + 2 * (52px + 206px + 52px))) {
+header,
+main,
+footer {
+max-width: var(--main-width);
+}
+header,
+main,
+footer {
+padding-left: 35px;
+margin-left: auto;
+margin-right: auto;
+}
+.sidenote,
+.marginnote {
+--margin-left: calc(2 * var(--line-height));
+--margin-right: var(--margin-left);
+--computed-width: calc((100vw - 100%) / 2 - var(--margin-right) - var(--margin-left));
+}
+.wide {
+width: 100%;
+overflow-x: auto;
+}
+.wide.extra-wide {
+margin-left: calc((1 - var(--extra-wide-scale-factor)) / 2 * 100%);
+width: calc(var(--extra-wide-scale-factor) * 100%);
+}
+.wide.full-width {
+margin-left: calc(var(--line-height) - ((100vw - var(--main-width)) / 2));
+width: calc(100vw - 2 * var(--line-height));
+}
+.wide.extra-wide figcaption,
+.wide.extra-wide table > caption {
+margin-left: calc(((var(--extra-wide-scale-factor) - 1) / 2) * var(--main-width));
+max-width: var(--main-width);
+margin-right: calc(100% - var(--main-width) - (((var(--extra-wide-scale-factor) - 1) / 2) * var(--main-width)));
+}
+.wide.full-width figcaption,
+.wide.full-width table > caption {
+margin-left: calc((100vw - var(--main-width)) / 2 - var(--line-height));
+max-width: var(--main-width);
+margin-right: calc(100% - var(--main-width) - ((100vw - var(--main-width)) / 2 - var(--line-height)));
+}
+}
+
+
+
+@media screen and (min-width: calc(52px + 745px + 52px + 206px + 52px)) and (max-width: calc(745px + 2 * (52px + 206px + 52px) - 1px)) {
+header,
+nav#TOC,
+main,
+footer {
+margin-left: calc(2 * var(--line-height));
+max-width: var(--main-width);
+margin-right: auto;
+}
+.sidenote,
+.marginnote {
+--margin-left: calc(2 * var(--line-height));
+--margin-right: var(--margin-left);
+--computed-width: calc(100vw - var(--main-width) - calc(2 * var(--line-height)) - var(--margin-right) - var(--margin-left));
+}
+.wide {
+width: 100%;
+overflow-x: auto;
+overflow-y: hidden;
+}
+.wide.extra-wide {
+margin-left: calc(-1 * var(--line-height));
+width: calc(100vw - 2 * var(--line-height));
+max-width: calc(var(--extra-wide-scale-factor) * var(--main-width));
+}
+.wide.full-width {
+margin-left: calc(-1 * var(--line-height));
+width: calc(100vw - 2 * var(--line-height));
+max-width: calc(100vw - 2 * var(--line-height));
+}
+.wide.extra-wide .katex-display,
+.wide.full-width .katex-display {
+padding-left: var(--line-height);
+padding-right: var(--line-height);
+}
+.wide.extra-wide .katex-display,
+.wide.extra-wide .katex-display > .katex,
+.wide.full-width .katex-display,
+.wide.full-width .katex-display > .katex {
+text-align: left;
+}
+.wide.extra-wide figcaption,
+.wide.extra-wide table > caption,
+.wide.full-width figcaption,
+.wide.full-width table > caption {
+text-align: left;
+margin-left: var(--line-height);
+max-width: var(--main-width);
+}
+}
+
+
+
+@media screen and (min-width: calc(26px + 550px + 26px + 169px + 26px)) and (max-width: calc(52px + 745px + 52px + 206px + 52px - 1px)) {
+header,
+nav#TOC,
+main,
+footer {
+margin-left: var(--line-height);
+max-width: calc(max(var(--main-width-narrow), 100vw - (3 * var(--line-height)) - var(--side-note-max-width)));
+margin-right: auto;
+}
+.sidenote,
+.marginnote {
+--margin-left: var(--line-height);
+--margin-right: var(--line-height);
+--computed-width: calc(100vw - var(--main-width-narrow) - var(--line-height) - var(--margin-right) - var(--margin-left));
+}
+.wide {
+width: var(--main-width);
+overflow-x: auto;
+overflow-y: hidden;
+}
+.wide .katex-display,
+.wide .katex-display > .katex {
+text-align: left;
+}
+.wide figcaption,
+.wide table > caption {
+text-align: left;
+max-width: var(--main-width-narrow);
+}
+.wide.extra-wide,
+.wide.full-width {
+width: calc(100vw - 2 * var(--line-height));
+}
+}
+
+
+
+@media screen and (max-width: calc(26px + 550px + 26px + 169px + 26px - 1px)) {
+header,
+nav#TOC,
+main,
+footer {
+margin-left: var(--line-height);
+margin-right: var(--line-height);
+}
+.sidenote,
+.marginnote {
+display: none;
+}
+.margin-toggle:checked + .sidenote,
+.margin-toggle:checked + .marginnote {
+display: block;
+float: left;
+clear: both;
+width: 100%;
+max-width: 100%;
+}
+.wide {
+width: 100%;
+overflow-x: auto;
+overflow-y: hidden;
+}
+.wide .katex-display,
+.wide .katex-display > .katex {
+text-align: left;
+}
+.wide figcaption,
+.wide table > caption {
+text-align: left;
+max-width: calc(100vw - 2 * var(--line-height));
+}
+}
+
+
+@page {
+size: letter;
+margin: 0.5in;
+
+margin-left: 0.25in;
+}
+@media print {
+:root {
+--line-height: 18px;
+--font-size: 12px;
+--inline-code-font-size: 11px;
+--code-block-font-size: 10px;
+--code-block-side-padding: 6px;
+--line-numbers-font-size: 8.5px;
+--tight-code-line-height: 12.5px;
+--tight-code-padding-top: 2px;
+--side-note-line-height: 14px;
+--side-note-font-size: 9px;
+--side-note-code-font-size: 9px;
+--side-note-baseline-offset: 3px;
+--side-note-sup-offset: -4px;
+--side-note-number-hang-left: -4px;
+--side-note-text-indent: -6.5px;
+--title-font-size: 30px;
+--title-code-font-size: 29px;
+--title-line-height: 37px;
+--title-margin-top: 71px;
+--h1-font-size: 22px;
+--h1-code-font-size: 20px;
+--h1-line-height: 28px;
+--h1-word-spacing: 0.5px;
+--h1-margin-top: 18px;
+--h1-margin-bottom: 6px;
+--h2-font-size: 16.5px;
+--h2-code-font-size: 15px;
+--h2-line-height: 22px;
+--h2-word-spacing: 0px;
+--h2-margin-top: 14px;
+--h2-margin-bottom: 4.5px;
+--ul-indent-size: 18px;
+--ol-indent-size: 14px;
+--hr-margin-top: 14px;
+--figcaption-line-height: 16px;
+--figcaption-font-size: 10px;
+--figcaption-code-font-size: 9.5px;
+--figcaption-gap: 4.5px;
+--captioned-figure-gap: 7.5px;
+--table-line-height: 16px;
+--table-font-size: 10px;
+--table-code-font-size: 9.5px;
+--nav-toc-font-size: 8.5px;
+--nav-toc-code-font-size: 8.5px;
+}
+body {
+padding-top: 0;
+
+padding-left: 0.25in;
+}
+header,
+nav#TOC,
+main,
+footer {
+width: 5.25in;
+margin-right: auto;
+}
+.sidenote,
+.marginnote {
+width: 2in;
+margin-right: -2.25in;
+}
+.wide {
+width: 7.5in;
+overflow-x: hidden;
+overflow-y: hidden;
+}
+.wide .katex-display,
+.wide .katex-display > .katex {
+text-align: left;
+}
+.wide figcaption,
+.wide table > caption {
+text-align: left;
+width: 5.25in;
+}
+.wide pre > code {
+white-space: pre-wrap;
+}
+}
+h1, h2, h3 {
+page-break-after: avoid;
+}
+table, figure, pre, img {
+page-break-inside: avoid;
+}
+
+
+
+</style>
+  <style type="text/css">:root {
+--solarized-base03: #002b36;
+--solarized-base02: #073642;
+--solarized-base01: #586e75;
+--solarized-base00: #657b83;
+--solarized-base0: #839496;
+--solarized-base1: #93a1a1;
+--solarized-base2: #eee8d5;
+--solarized-base3: #fdf6e3;
+--solarized-yellow: #b58900;
+--solarized-orange: #cb4b16;
+--solarized-red: #dc322f;
+--solarized-magenta: #d33682;
+--solarized-violet: #6c71c4;
+--solarized-blue: #268bd2;
+--solarized-cyan: #2aa198;
+--solarized-green: #859900;
+}
+@media (prefers-color-scheme: dark) {
+:root {
+--solarized-base03: #fdf6e3;
+--solarized-base02: #eee8d5;
+--solarized-base01: #93a1a1;
+--solarized-base00: #839496;
+--solarized-base0: #657b83;
+--solarized-base1: #586e75;
+--solarized-base2: #073642;
+--solarized-base3: #002b36;
+}
+}
+pre, pre.numberSource {
+background: var(--solarized-base3);
+
+--color-code-highlight-bg: var(--solarized-base2);
+}
+pre code { color: var(--solarized-base00); }
+pre.numberSource > code.sourceCode > span > a:first-child::before {
+color: var(--solarized-base1);
+}
+code span.kw { color: var(--solarized-green); font-weight: normal; font-style: normal; } 
+code span.dt { color: var(--solarized-yellow); font-weight: normal; font-style: normal; } 
+code span.dv { color: var(--solarized-cyan); font-weight: normal; font-style: normal; } 
+code span.bn { color: var(--solarized-cyan); font-weight: normal; font-style: normal; } 
+code span.fl { color: var(--solarized-cyan); font-weight: normal; font-style: normal; } 
+code span.ch { color: var(--solarized-cyan); font-weight: normal; font-style: normal; } 
+code span.st { color: var(--solarized-cyan); font-weight: normal; font-style: normal; } 
+code span.co { color: var(--solarized-base1); font-weight: normal; font-style: italic; } 
+code span.ot { color: var(--solarized-blue); font-weight: normal; font-style: normal; } 
+code span.al { color: var(--solarized-red); font-weight: normal; font-style: normal; } 
+code span.fu { color: var(--solarized-blue); font-weight: normal; font-style: normal; } 
+code span.er { color: var(--solarized-red); font-weight: normal; font-style: normal; } 
+code span.wa { color: var(--solarized-orange); font-weight: normal; font-style: italic; } 
+code span.cn { color: var(--solarized-cyan); font-weight: normal; font-style: normal; } 
+code span.sc { color: var(--solarized-red); font-weight: normal; font-style: normal; } 
+code span.vs { color: var(--solarized-cyan); font-weight: normal; font-style: normal; } 
+code span.ss { color: var(--solarized-red); font-weight: normal; font-style: normal; } 
+code span.im { color: var(--solarized-base00); font-weight: normal; font-style: normal; } 
+code span.va { color: var(--solarized-blue); font-weight: normal; font-style: normal; } 
+code span.cf { color: var(--solarized-green); font-weight: normal; font-style: normal; } 
+code span.op { color: var(--solarized-green); font-weight: normal; font-style: normal; } 
+code span.bu { color: var(--solarized-base00); font-weight: normal; font-style: normal; } 
+code span.ex { color: var(--solarized-base00); font-weight: normal; font-style: normal; } 
+code span.pp { color: var(--solarized-orange); font-weight: normal; font-style: normal; } 
+code span.at { color: var(--solarized-base00); font-weight: normal; font-style: normal; } 
+code span.do { color: var(--solarized-base1); font-weight: normal; font-style: italic; } 
+code span.an { color: var(--solarized-base1); font-weight: normal; font-style: italic; } 
+code span.cv { color: var(--solarized-base1); font-weight: normal; font-style: italic; } 
+code span.in { color: var(--solarized-base1); font-weight: normal; font-style: italic; } 
+a.sourceLine::before { text-decoration: none; }
+
+code.diff span.kw { color: var(--solarized-yellow); font-weight: normal; font-style: normal; } 
+code.diff span.dt { color: var(--solarized-blue); font-weight: normal; font-style: normal; } 
+code.diff span.st { color: var(--solarized-red); font-weight: normal; font-style: normal; } 
+code.diff span.va { color: var(--solarized-green); font-weight: normal; font-style: normal; } 
+</style>
+  
+</head>
+<body>
+
+<header>
+<h1 class="title">Methan0l Reference Documentation</h1>
+<blockquote class="metadata">
+<p class="date before-toc"><time datetime="v0.3-pre (May 4,
+2023)">v0.3-pre (May 4, 2023)</time></p>
+</blockquote>
+</header>
+
+<nav id="TOC" role="doc-toc">
+    <strong>Contents</strong><label for="contents">⊕</label>
+  <input type="checkbox" id="contents">
+  <ul>
+  <li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+  <li><a href="#evaluation-and-execution" id="toc-evaluation-and-execution">Evaluation and Execution</a></li>
+  <li><a href="#data-types" id="toc-data-types">Data Types</a>
+  <ul>
+  <li><a href="#primitives-heap-stored-types" id="toc-primitives-heap-stored-types">Primitives &amp; Heap-stored
+  Types</a></li>
+  <li><a href="#type-references" id="toc-type-references">Type
+  References</a></li>
+  <li><a href="#built-in-data-types" id="toc-built-in-data-types">Built-in Data Types</a>
+  <ul>
+  <li><a href="#primitive-types" id="toc-primitive-types">Primitive
+  Types</a></li>
+  <li><a href="#heap-stored-types" id="toc-heap-stored-types">Heap-stored Types</a></li>
+  <li><a href="#callables" id="toc-callables">Callables</a></li>
+  <li><a href="#user-defined-types" id="toc-user-defined-types">User-defined Types</a></li>
+  <li><a href="#unevaluated-expressions" id="toc-unevaluated-expressions">Unevaluated Expressions</a></li>
+  </ul></li>
+  <li><a href="#standard-classes" id="toc-standard-classes">Standard
+  Classes</a></li>
+  </ul></li>
+  <li><a href="#variables" id="toc-variables">Variables</a></li>
+  <li><a href="#visibility-scopes" id="toc-visibility-scopes">Visibility
+  Scopes</a>
+  <ul>
+  <li><a href="#local-variables" id="toc-local-variables">Local
+  Variables</a></li>
+  <li><a href="#global-variables" id="toc-global-variables">Global
+  Variables</a></li>
+  <li><a href="#class-visibility-rules" id="toc-class-visibility-rules">Class Visibility Rules</a></li>
+  <li><a href="#function-invocation-rules" id="toc-function-invocation-rules">Function Invocation Rules</a></li>
+  </ul></li>
+  <li><a href="#reserved-identifiers" id="toc-reserved-identifiers">Reserved Identifiers</a></li>
+  <li><a href="#comments" id="toc-comments">Comments</a></li>
+  <li><a href="#operators" id="toc-operators">Operators</a>
+  <ul>
+  <li><a href="#operator-precedence" id="toc-operator-precedence">Operator Precedence</a></li>
+  <li><a href="#assignment-operators" id="toc-assignment-operators">Assignment Operators</a>
+  <ul>
+  <li><a href="#copy-assignment" id="toc-copy-assignment">Copy
+  Assignment</a></li>
+  <li><a href="#move-assignment" id="toc-move-assignment">Move
+  Assignment</a></li>
+  <li><a href="#type-keeping-assignment" id="toc-type-keeping-assignment">Type-keeping Assignment</a></li>
+  </ul></li>
+  <li><a href="#input-output-operators" id="toc-input-output-operators">Input / Output Operators</a>
+  <ul>
+  <li><a href="#input-operator" id="toc-input-operator">Input
+  Operator</a></li>
+  <li><a href="#output-operators" id="toc-output-operators">Output
+  Operators</a></li>
+  </ul></li>
+  <li><a href="#arithmetic-operators" id="toc-arithmetic-operators">Arithmetic Operators</a></li>
+  <li><a href="#string-operators" id="toc-string-operators">String
+  Operators</a></li>
+  <li><a href="#string-formatter" id="toc-string-formatter">String
+  Formatter</a></li>
+  <li><a href="#comparison-operators" id="toc-comparison-operators">Comparison Operators</a></li>
+  <li><a href="#logical-operators" id="toc-logical-operators">Logical
+  Operators</a></li>
+  <li><a href="#return-operator" id="toc-return-operator">Return
+  Operator</a></li>
+  <li><a href="#reference-operator" id="toc-reference-operator">Reference Operator</a></li>
+  <li><a href="#reference-related-operators" id="toc-reference-related-operators">Reference-related
+  Operators</a></li>
+  <li><a href="#conditional-ternary-operator" id="toc-conditional-ternary-operator">Conditional (Ternary)
+  Operator</a></li>
+  <li><a href="#range-expression" id="toc-range-expression">Range
+  Expression</a></li>
+  </ul></li>
+  <li><a href="#if-else-expression" id="toc-if-else-expression">If-Else
+  Expression</a></li>
+  <li><a href="#loops" id="toc-loops">Loops</a>
+  <ul>
+  <li><a href="#for-loop" id="toc-for-loop">For Loop</a></li>
+  <li><a href="#while-loop" id="toc-while-loop">While Loop</a></li>
+  <li><a href="#for-each-loop" id="toc-for-each-loop">For-each
+  Loop</a></li>
+  <li><a href="#break-expression" id="toc-break-expression">Break
+  Expression</a></li>
+  </ul></li>
+  <li><a href="#try-catch-expression" id="toc-try-catch-expression">Try-catch Expression</a></li>
+  <li><a href="#units" id="toc-units">Units</a>
+  <ul>
+  <li><a href="#regular-units" id="toc-regular-units">Regular
+  Units</a></li>
+  <li><a href="#weak-units" id="toc-weak-units">Weak Units</a></li>
+  <li><a href="#box-units" id="toc-box-units">Box Units</a></li>
+  <li><a href="#pseudo-function-invocation" id="toc-pseudo-function-invocation">Pseudo-function
+  Invocation</a></li>
+  </ul></li>
+  <li><a href="#functions" id="toc-functions">Functions</a>
+  <ul>
+  <li><a href="#function-definition-syntax" id="toc-function-definition-syntax">Function Definition
+  Syntax</a></li>
+  <li><a href="#implicit-return-short-form" id="toc-implicit-return-short-form">Implicit Return Short
+  Form</a></li>
+  <li><a href="#multi-expression-short-form" id="toc-multi-expression-short-form">Multi-expression Short
+  Form</a></li>
+  <li><a href="#lambdas" id="toc-lambdas">Lambdas</a></li>
+  <li><a href="#documenting-functions" id="toc-documenting-functions">Documenting Functions</a>
+  <ul>
+  <li><a href="#return-type" id="toc-return-type">Return type</a></li>
+  <li><a href="#argument-list" id="toc-argument-list">Argument
+  List</a></li>
+  <li><a href="#inherited-methods" id="toc-inherited-methods">Inherited
+  Methods</a></li>
+  </ul></li>
+  <li><a href="#calling-functions" id="toc-calling-functions">Calling
+  Functions</a></li>
+  </ul></li>
+  <li><a href="#unevaluated-expressions-1" id="toc-unevaluated-expressions-1">Unevaluated Expressions</a></li>
+  <li><a href="#classes" id="toc-classes">Classes</a>
+  <ul>
+  <li><a href="#fields" id="toc-fields">Fields</a></li>
+  <li><a href="#methods" id="toc-methods">Methods</a></li>
+  <li><a href="#constructor" id="toc-constructor">Constructor</a></li>
+  <li><a href="#inheritance" id="toc-inheritance">Inheritance</a>
+  <ul>
+  <li><a href="#method-overriding" id="toc-method-overriding">Method
+  Overriding</a></li>
+  </ul></li>
+  <li><a href="#operator-overloading" id="toc-operator-overloading">Operator Overloading</a></li>
+  <li><a href="#index-operator-overloading" id="toc-index-operator-overloading">Index Operator
+  Overloading</a></li>
+  <li><a href="#copying-objects" id="toc-copying-objects">Copying
+  Objects</a></li>
+  <li><a href="#anonymous-objects" id="toc-anonymous-objects">Anonymous
+  Objects</a></li>
+  <li><a href="#reflection" id="toc-reflection">Reflection</a></li>
+  </ul></li>
+  <li><a href="#path-prefixes" id="toc-path-prefixes">Path
+  Prefixes</a></li>
+  <li><a href="#built-in-interfaces" id="toc-built-in-interfaces">Built-in Interfaces</a>
+  <ul>
+  <li><a href="#iterable" id="toc-iterable">Iterable</a></li>
+  <li><a href="#iterator" id="toc-iterator">Iterator</a></li>
+  <li><a href="#collection" id="toc-collection">Collection</a></li>
+  <li><a href="#abstractmap" id="toc-abstractmap">AbstractMap</a>
+  <ul>
+  <li><a href="#mapentry" id="toc-mapentry">MapEntry</a></li>
+  </ul></li>
+  <li><a href="#range" id="toc-range">Range</a></li>
+  </ul></li>
+  <li><a href="#built-in-classes" id="toc-built-in-classes">Built-in
+  Classes</a></li>
+  <li><a href="#container-classes" id="toc-container-classes">Container
+  Classes</a>
+  <ul>
+  <li><a href="#pair" id="toc-pair">Pair</a></li>
+  <li><a href="#list-1" id="toc-list-1">List</a></li>
+  <li><a href="#set-1" id="toc-set-1">Set</a></li>
+  <li><a href="#string-1" id="toc-string-1">String</a></li>
+  <li><a href="#map-1" id="toc-map-1">Map</a></li>
+  </ul></li>
+  <li><a href="#iterable-classes" id="toc-iterable-classes">Iterable
+  Classes</a>
+  <ul>
+  <li><a href="#mapping" id="toc-mapping">Mapping</a></li>
+  <li><a href="#filter" id="toc-filter">Filter</a></li>
+  <li><a href="#intrange-floatrange" id="toc-intrange-floatrange">IntRange / FloatRange</a></li>
+  </ul></li>
+  <li><a href="#utility-classes" id="toc-utility-classes">Utility
+  Classes</a>
+  <ul>
+  <li><a href="#file" id="toc-file">File</a></li>
+  <li><a href="#random" id="toc-random">Random</a></li>
+  </ul></li>
+  <li><a href="#modules" id="toc-modules">Modules</a>
+  <ul>
+  <li><a href="#module-api-legacy" id="toc-module-api-legacy">Module API
+  (Legacy)</a></li>
+  <li><a href="#loading-modules" id="toc-loading-modules">Loading
+  Modules</a>
+  <ul>
+  <li><a href="#module-path-resolution" id="toc-module-path-resolution">Module Path Resolution</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#core-library" id="toc-core-library">Core
+  Library</a></li>
+  <li><a href="#input-output-operators-functions-libio" id="toc-input-output-operators-functions-libio">Input / Output
+  Operators &amp; Functions <code>[LibIO]</code></a></li>
+  <li><a href="#string-related-functions-libstring" id="toc-string-related-functions-libstring">String-related Functions
+  <code>[LibString]</code></a></li>
+  <li><a href="#data-structure-operators-functions-libdata" id="toc-data-structure-operators-functions-libdata">Data Structure
+  Operators &amp; Functions <code>[LibData]</code></a>
+  <ul>
+  <li><a href="#hashing-values-of-any-type" id="toc-hashing-values-of-any-type">Hashing Values of Any
+  Type</a></li>
+  <li><a href="#deleting-values" id="toc-deleting-values">Deleting
+  Values</a></li>
+  <li><a href="#type-operators" id="toc-type-operators">Type
+  Operators</a></li>
+  <li><a href="#type-conversion" id="toc-type-conversion">Type
+  Conversion</a></li>
+  <li><a href="#variadic-function-arguments" id="toc-variadic-function-arguments">Variadic Function
+  Arguments</a></li>
+  <li><a href="#command-line-arguments" id="toc-command-line-arguments">Command Line Arguments</a></li>
+  <li><a href="#range-1" id="toc-range-1">Range</a></li>
+  </ul></li>
+  <li><a href="#internal-functions-libinternal" id="toc-internal-functions-libinternal">Internal Functions
+  <code>[LibInternal]</code></a>
+  <ul>
+  <li><a href="#get-environment-info" id="toc-get-environment-info">Get
+  Environment Info</a></li>
+  <li><a href="#heap-related-functions" id="toc-heap-related-functions">Heap-related Functions</a></li>
+  <li><a href="#methan0l-version-info" id="toc-methan0l-version-info">Methan0l Version Info</a></li>
+  <li><a href="#unit-related-functions-operators-libunit" id="toc-unit-related-functions-operators-libunit">Unit-related
+  Functions &amp; Operators <code>[LibUnit]</code></a></li>
+  <li><a href="#persistence" id="toc-persistence">Persistence</a></li>
+  <li><a href="#check-if-current-unit-is-the-programs-entry-point" id="toc-check-if-current-unit-is-the-programs-entry-point">Check if
+  current Unit is the program’s entry point</a></li>
+  <li><a href="#execution-control" id="toc-execution-control">Execution
+  Control</a></li>
+  <li><a href="#benchmark" id="toc-benchmark">Benchmark</a></li>
+  <li><a href="#reflection-1" id="toc-reflection-1">Reflection</a></li>
+  </ul></li>
+  <li><a href="#common-math-functions-libmath" id="toc-common-math-functions-libmath">Common Math Functions
+  <code>[LibMath]</code></a>
+  <ul>
+  <li><a href="#trigonometry" id="toc-trigonometry">Trigonometry</a></li>
+  <li><a href="#power-functions" id="toc-power-functions">Power
+  functions</a></li>
+  <li><a href="#exponential-and-logarithmic-functions" id="toc-exponential-and-logarithmic-functions">Exponential and
+  Logarithmic Functions</a></li>
+  <li><a href="#rounding" id="toc-rounding">Rounding</a></li>
+  <li><a href="#absolute-value" id="toc-absolute-value">Absolute
+  Value</a></li>
+  </ul></li>
+  <li><a href="#standard-modules" id="toc-standard-modules">Standard
+  Modules</a></li>
+  <li><a href="#system" id="toc-system">System</a></li>
+  <li><a href="#ncurses" id="toc-ncurses">Ncurses</a></li>
+  </ul>
+</nav>
+
+<main>
+<h1 id="introduction">Introduction</h1>
+<p>Methan0l is an embeddable general-purpose multi-paradigm interpreted
+programming language.</p>
+<p>Every Methan0l program is a <strong>unit</strong> - a scoped block of
+expressions that can return a value.</p>
+<p>Expressions can be either separated by a newline character, semicolon
+or just a space:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>foo = 2; bar = 5</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>/* Valid too */</span>
+<span id="cb1-4"><a href="#cb1-4"></a>calc = foo * bar bar += 123</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>%% calc</span></code></pre></div>
+<h1 id="evaluation-and-execution">Evaluation and Execution</h1>
+<p>There are no statements in Methan0l because almost everything yields
+a value upon evaluation. However, there are two ways expressions can be
+used: they can be either <strong>evaluated</strong> or
+<strong>executed</strong>.</p>
+<p><strong>Evaluation</strong> of an expression yields a value, while
+<strong>execution</strong> doesn’t yield anything and leaves a side
+effect instead.</p>
+<p>Top-level expressions are <strong>executed</strong> by the
+interpreter while expressions that are used as parts of other
+expressions get <strong>evaluated</strong> for the result to be used in
+the parent expression.</p>
+<p><strong>Execution</strong> and <strong>evaluation</strong> are
+equivalent for almost all expressions, except for:<br />
+<br />
+<strong>Unit definition</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>{</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    do_something()</span>
+<span id="cb2-3"><a href="#cb2-3"></a>}</span></code></pre></div>
+<p>If a unit definition expression is used inside another expression, it
+just evaluates to a unit object, while if it’s used as a top-level
+expression, it’s evaluated to a unit and the result is immediately
+executed).<br />
+<br />
+<strong>Identifier expression</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>some_variable</span></code></pre></div>
+<p>When used as a top-level expression, identifier is resolved and if
+it’s bound to a unit, the unit will get executed. If it’s bound to an
+unevaluated expression, it will get evaluated as a result.</p>
+<h1 id="data-types">Data Types</h1>
+<p>All methan0l variables are 3 pointers wide (24 bytes on 64-bit
+machines) regardless of their type.</p>
+<h2 id="primitives-heap-stored-types">Primitives &amp; Heap-stored
+Types</h2>
+<p>There are two categories of types in Methan0l:</p>
+<ul>
+<li>Primitives, which are stored entirely within the variables.</li>
+<li>Heap-stored, for which only refcounted pointers to the actual
+objects are stored within the variables, the objects’ contents are
+stored in the interpreter heap.</li>
+</ul>
+<p>Because of this, copying of values is also separated into two
+types:</p>
+<ul>
+<li>Partial copy: only the variable itself is copied (this is equivalent
+to full copy for primitive types / only the pointer to an object is
+copied for heap-stored types).<br />
+</li>
+<li>Full copy: a new copy of the heap-stored object is allocated along
+with a new variable that contains a pointer to this object.</li>
+</ul>
+<h2 id="type-references">Type References</h2>
+<p>Types can be referenced by name using the following expression:
+<code>(TypeName)</code>. Type reference expressions yield numeric type
+ids, which can be used for type checking (for example, via the
+<code>val is: type_expr</code> operator), type assertions
+(<code>obj require: ClassName</code>), or for comparison with another
+objects’ type ids, which can be obtained via the
+<code>typeid: obj</code> operator.</p>
+<h2 id="built-in-data-types">Built-in Data Types</h2>
+<p>All types listed in this section are “magic” built-in non-class
+types.</p>
+<h3 id="primitive-types">Primitive Types</h3>
+<p><strong>Nil</strong></p>
+<p>Represents absence of value.<br />
+This is the value type of <code>nil</code> reserved identifier as well
+as the return type of a non-returning function.</p>
+<p><strong>Integer</strong></p>
+<p>64-bit integral type.<br />
+Supports hex (<code>0x123</code>) and binary (<code>0b0110101</code>)
+literal formats. Digits of numbers can be delimited with spaces for
+readability (e.g. <code>x = 1 000 000</code>)</p>
+<p><strong>Float</strong></p>
+<p>64-bit floating point type.</p>
+<p><strong>Boolean</strong></p>
+<p>Logical type. Can have values <code>true</code> or
+<code>false</code>.</p>
+<p><strong>Character</strong></p>
+<p>Character type. Literal format: <code>&#39;c&#39;</code>, escape sequences
+are supported: <code>&#39;\n&#39;</code>, …</p>
+<p><strong>Reference</strong></p>
+<p>Points at another value and is always evaluated to it.<br />
+Doesn’t have a type id. To check whether value is a reference, use the
+<code>is_reference: expr</code> operator.<br />
+References must always be assigned to variables and returned from
+functions explicitly (by using the <code>**expr</code> operator),
+otherwise even if <code>expr</code> evaluates to a reference, it will be
+unwrapped into a copy of the referenced value.</p>
+<h3 id="heap-stored-types">Heap-stored Types</h3>
+<h3 id="callables">Callables</h3>
+<p><strong>Unit</strong></p>
+<p>An expression block that may or may not return a value. Can be
+defined via the <code>{...}</code> syntax. Units can also be assigned to
+variables and invoked the same way as functions.</p>
+<p><strong>Function</strong></p>
+<p>Function type. For definition syntax, see the <a href="#functions">functions</a> section.</p>
+<h3 id="user-defined-types">User-defined Types</h3>
+<p><strong>Object</strong></p>
+<p>Represents an object of some class (or an anonymous class). Doesn’t
+have a type id.<br />
+Objects are created via the <code>new: Class(...)</code> operator.
+Copying rules don’t apply to them, so to create a full copy of an
+object, <code>objcopy: expr</code> operator must be used.</p>
+<p><strong>Fallback</strong></p>
+<p>Represents an object of an unknown native type.<br />
+Used for interfacing with modules and objects of native classes bound to
+the interpreter.</p>
+<h3 id="unevaluated-expressions">Unevaluated Expressions</h3>
+<h4 id="expression">Expression</h4>
+<p>Value type returned by the <code>noeval: expr</code> operator. When
+evaluated, evaluates the underlying expression.</p>
+<h2 id="standard-classes">Standard Classes</h2>
+<h4 id="string">String</h4>
+<p>String class. Escape sequences are supported inside literals
+(e.g. <code>&quot;a, b \n c\td&quot;</code>).</p>
+<h4 id="list">List</h4>
+<p>Array-like container class.<br />
+Can be defined via the <code>[...]</code> operator
+(e.g. <code>list = [1, 2, 3]</code>), or by invoking the constructor:
+<code>list = new: List()</code>.</p>
+<h4 id="set">Set</h4>
+<p>A container class without duplicate elements.<br />
+Can be defined by passing a list to the constructor:
+<code>new: Set(list_obj)</code>.</p>
+<h4 id="map">Map</h4>
+<p>Associative key-value container class.<br />
+Can be defined via the
+<code>@[key1 =&gt; value1, key2 =&gt; value2, ...]</code> syntax or by
+invoking the constructor: <code>map = new: Map()</code>.</p>
+<p>For more detailed infornation on usage of container types, see the <a href="#container-classes">container types</a> section.</p>
+<h1 id="variables">Variables</h1>
+<p>Variables are dynamically-typed and are associated with
+identifiers.<br />
+In methan0l (almost) anything can be assigned to a variable, including
+functions, units (headless functions) and even unevaluated expressions.
+In terms of visibility variables are divided into two categories:
+<strong>local</strong> and <strong>global</strong>.</p>
+<h1 id="visibility-scopes">Visibility Scopes</h1>
+<p>All variables in Methan0l are implicitly local.<br />
+This means that for any <strong>regular unit</strong> (a function or a
+plain unit) any variable defined outside of its scope is
+<strong>global</strong> while variables defined inside of its scope are
+<strong>local</strong>.<br />
+<strong>Weak units</strong> (loops, conditional / try-catch expressions,
+lambdas) have a different visibility rule: all variables from parent
+scopes up to the first <strong>regular unit</strong> are local and all
+the other ones are global.</p>
+<h2 id="local-variables">Local Variables</h2>
+<p><strong>Local</strong> variables can be accessed just by referencing
+their names:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>{</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    x = 123</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    foo(x) /* Access local variable x */</span>
+<span id="cb4-4"><a href="#cb4-4"></a>}</span></code></pre></div>
+<p>There’s also a way to define an explicitly local variable inside of
+the current scope.<br />
+<code>var: name</code> - creates a local variable <code>name</code> and
+returns a reference to it.<br />
+Even though multiple variables with the same name inside nested scopes
+can be created this way, the <code>#</code> prefix will be referring
+only to the first outer variable with the given name effectively
+shadowing all the other ones.</p>
+<p><br />
+Example:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>&lt;% &quot;Explicit local variables&quot;</span>
+<span id="cb5-2"><a href="#cb5-2"></a>{</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    x = 123</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    if (x == 123) ? {</span>
+<span id="cb5-5"><a href="#cb5-5"></a>        &lt;% $&quot;Outer `x`: {}&quot; x</span>
+<span id="cb5-6"><a href="#cb5-6"></a>        var: x = &quot;foo&quot;</span>
+<span id="cb5-7"><a href="#cb5-7"></a>        &lt;% $&quot;Explicitly local `x`: {}&quot; x</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    }</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    &lt;% $&quot;Outer `x` is unchanged: {}\n&quot; x</span>
+<span id="cb5-10"><a href="#cb5-10"></a>    </span>
+<span id="cb5-11"><a href="#cb5-11"></a>    &lt;% &quot;Variable shadowing&quot;</span>
+<span id="cb5-12"><a href="#cb5-12"></a>    -&gt; {</span>
+<span id="cb5-13"><a href="#cb5-13"></a>        var: x = &quot;Local 1&quot;</span>
+<span id="cb5-14"><a href="#cb5-14"></a>        -&gt; {</span>
+<span id="cb5-15"><a href="#cb5-15"></a>            var: x = &quot;Local 2&quot;</span>
+<span id="cb5-16"><a href="#cb5-16"></a>            &lt;% $&quot;`x`s visible from here: [local: {}], [global: {}]&quot; x, #x</span>
+<span id="cb5-17"><a href="#cb5-17"></a>        }</span>
+<span id="cb5-18"><a href="#cb5-18"></a>    }</span>
+<span id="cb5-19"><a href="#cb5-19"></a>}</span></code></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>Explicit local variables</span>
+<span id="cb6-2"><a href="#cb6-2"></a>Outer `x`: 123</span>
+<span id="cb6-3"><a href="#cb6-3"></a>Explicitly local `x`: foo</span>
+<span id="cb6-4"><a href="#cb6-4"></a>Outer `x` is unchanged: 123</span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a>Variable shadowing</span>
+<span id="cb6-7"><a href="#cb6-7"></a>`x`s visible from here: [local: Local 2], [global: Local 1]</span></code></pre></div>
+<h2 id="global-variables">Global Variables</h2>
+<p><strong>Global</strong> variables can be accessed either by using the
+<code>#</code> prefix before the variable name:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>x = &quot;global value&quot;</span>
+<span id="cb7-2"><a href="#cb7-2"></a>f = func: () {</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    x = &quot;local value&quot;</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    foo(#x) /* Access x from the outer scope */</span>
+<span id="cb7-5"><a href="#cb7-5"></a>}</span></code></pre></div>
+<p>Or by importing them into the current scope by reference via the
+<code>global</code> operator:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>global: var1, var2, ...</span>
+<span id="cb8-2"><a href="#cb8-2"></a>var1.foo()</span></code></pre></div>
+<p><strong>Global</strong> variables can also be captured inside
+function parameter list definitions after all arguments (similar to
+default argument definition):</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>f = func: x, y, %glob1, %glob2, ... {</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    glob1 = x + y; /* Modifies the global `glob1` by reference */</span>
+<span id="cb9-3"><a href="#cb9-3"></a>}</span></code></pre></div>
+<h2 id="class-visibility-rules">Class Visibility Rules</h2>
+<p>As for classes, object fields can be accessed using <code>this</code>
+reference from within the method definition bodies.<br />
+All the other visibility rules are applied without changes.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>&lt;% &quot;Class visibility scopes&quot;</span>
+<span id="cb10-2"><a href="#cb10-2"></a>{</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    some_global_var = &quot;Very important&quot;</span>
+<span id="cb10-4"><a href="#cb10-4"></a>    </span>
+<span id="cb10-5"><a href="#cb10-5"></a>    class: SomeClass {</span>
+<span id="cb10-6"><a href="#cb10-6"></a>        foo</span>
+<span id="cb10-7"><a href="#cb10-7"></a>        bar</span>
+<span id="cb10-8"><a href="#cb10-8"></a>        </span>
+<span id="cb10-9"><a href="#cb10-9"></a>        construct =&gt; method: a, b {</span>
+<span id="cb10-10"><a href="#cb10-10"></a>            this.foo = a</span>
+<span id="cb10-11"><a href="#cb10-11"></a>            this.bar = b</span>
+<span id="cb10-12"><a href="#cb10-12"></a>        }</span>
+<span id="cb10-13"><a href="#cb10-13"></a>        </span>
+<span id="cb10-14"><a href="#cb10-14"></a>        do_stuff =&gt; method: ()</span>
+<span id="cb10-15"><a href="#cb10-15"></a>            &lt;% $&quot;foo = `{}`, bar = `{}`, accessing a global variable: `{}`&quot; this.foo, this.bar, #some_global_var</span>
+<span id="cb10-16"><a href="#cb10-16"></a>    }</span>
+<span id="cb10-17"><a href="#cb10-17"></a>    </span>
+<span id="cb10-18"><a href="#cb10-18"></a>    obj = new: SomeClass(&quot;text&quot;, &quot;more text&quot;)</span>
+<span id="cb10-19"><a href="#cb10-19"></a>    obj.do_stuff()</span>
+<span id="cb10-20"><a href="#cb10-20"></a>}</span>
+<span id="cb10-21"><a href="#cb10-21"></a>&lt;% &quot;&quot;</span></code></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>Class visibility scopes</span>
+<span id="cb11-2"><a href="#cb11-2"></a>foo = `text`, bar = `more text`, accessing a global variable: `Very important`</span></code></pre></div>
+<h2 id="function-invocation-rules">Function Invocation Rules</h2>
+<p>Scope visibility rules don’t apply to invocation expressions
+(<code>e.g. foo()</code>).<br />
+If function being called doesn’t exist in the current scope, an
+additional lookup will be performed until it’s found. If it’s not
+defined even in the global scope, an exception will be thrown.</p>
+<h1 id="reserved-identifiers">Reserved Identifiers</h1>
+<p>Methan0l has a number of reserved identifiers:</p>
+<ul>
+<li><code>nil</code> – evaluates to a Nil object, which represents an
+empty value.</li>
+<li><code>newl</code> – evaluates to the newline character.</li>
+<li><code>true</code> and <code>false</code> – evaluate to their
+respective <strong>Boolean</strong> values.</li>
+</ul>
+<h1 id="comments">Comments</h1>
+<p>There’s only one type of comments supported:</p>
+<p><code>/* Comment text */</code></p>
+<h1 id="operators">Operators</h1>
+<p>Most Methan0l operators have traditional behavior that doesn’t differ
+from any other language.<br />
+Operator expressions can also be grouped using <code>(</code>
+<code>)</code>.</p>
+<h2 id="operator-precedence">Operator Precedence</h2>
+<p>The higher the precedence level is, the tighter the operators are
+bound to their operands.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Pecedence</th>
+<th>Operators</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><code>noeval</code></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><code>&lt;%</code>, <code>%%</code>, <code>%&gt;</code></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>,
+…</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><code>=</code>, <code>&lt;-</code>, <code>:=</code></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><code>::</code></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><code>e1 ? e2 : e3</code></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><code>||</code></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><code>&amp;&amp;</code></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><code>|</code></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><code>^</code></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><code>&amp;</code></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><code>==</code>, <code>!=</code></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><code>&gt;</code>, <code>&lt;</code>, <code>&lt;=</code>,
+<code>&gt;=</code></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><code>&gt;&gt;</code>, <code>&lt;&lt;</code></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><code>+</code>, <code>-</code></td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><code>*</code>, <code>/</code>, <code>%</code></td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><code>-</code>, <code>!</code>, <code>~</code> (prefix)</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td><code>++</code>, <code>--</code> (prefix)</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>Postfix</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td><code>.</code>, <code>@</code></td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td><code>[]</code></td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td><code>()</code></td>
+</tr>
+<tr class="odd">
+<td>23</td>
+<td><code>++</code>, <code>--</code> (postfix)</td>
+</tr>
+<tr class="even">
+<td>24</td>
+<td><code>var</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="assignment-operators">Assignment Operators</h2>
+<h3 id="copy-assignment">Copy Assignment</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a>dest_expr = expr</span></code></pre></div>
+<p>This effectively creates a <strong>full copy</strong> of the
+<code>expr</code>’s Value. This means that for heap-stored types a new
+object containing the copy of the <code>expr</code>’s Value is
+created.<br />
+Copy assignment is evaluated <strong>right-to-left</strong>.</p>
+<h3 id="move-assignment">Move Assignment</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb13-1"><a href="#cb13-1"></a>dest_expr &lt;- expr</span></code></pre></div>
+<p>Creates a temporary <strong>partial copy</strong> of
+<code>expr</code>, removes it from the data table (if <code>expr</code>
+is an idfr) and assigns the <strong>partial copy</strong> to
+<code>dest_idfr</code>.<br />
+Move assignment is evaluated <strong>left-to-right</strong>.</p>
+<h3 id="type-keeping-assignment">Type-keeping Assignment</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb14-1"><a href="#cb14-1"></a>dest_expr := expr</span></code></pre></div>
+<p>Evaluates <code>expr</code> and converts it to the
+<code>dest_expr</code>’s type before assigning to it.<br />
+Type-keeping assignment is evaluated <strong>right-to-left</strong>.</p>
+<h2 id="input-output-operators">Input / Output Operators</h2>
+<h3 id="input-operator">Input Operator</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb15-1"><a href="#cb15-1"></a>%&gt; expr</span></code></pre></div>
+<p>Gets a value from stdin, deduces its type and assigns it to the
+specified variable / reference.</p>
+<p>Input can also be read as a String using
+<code>read_line([String prompt])</code> function.</p>
+<h3 id="output-operators">Output Operators</h3>
+<ul>
+<li><code>%% expr</code> – convert <code>expr</code>’s evaluation result
+to string and print it out to stdout.</li>
+<li><code>&lt;% expr</code> – print with a trailing newline.</li>
+</ul>
+<h2 id="arithmetic-operators">Arithmetic Operators</h2>
+<p>If at least one operand of the expression is <strong>Float</strong>,
+the result is promoted to <strong>Float</strong> (except for bitwise
+operators and <code>%</code> – only <strong>Integer</strong>s are
+supported, no implicit conversion is performed).</p>
+<p><strong>Binary:</strong><br />
+<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>,
+<code>%</code><br />
+<code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>,
+<code>%=</code><br />
+<code>&amp;</code>, <code>|</code>, <code>^</code>,
+<code>&gt;&gt;</code>, <code>&lt;&lt;</code><br />
+<code>&amp;=</code>, <code>|=</code>, <code>^=</code>,
+<code>&gt;&gt;=</code>, <code>&lt;&lt;=</code><br />
+<br />
+<strong>Unary:</strong><br />
+<code>++</code>, <code>--</code> (both prefix and postfix)<br />
+<code>-</code>, <code>~</code> (prefix)</p>
+<h2 id="string-operators">String Operators</h2>
+<ul>
+<li><p><code>::</code> – concatenation operator, converts operands to
+String and creates a new String with the result of concatenation.<br />
+Example: <code>result = &quot;One &quot; :: 2 :: &quot; &quot; :: 3.0</code>.</p></li>
+<li><p><code>$$</code> (prefix) – string conversion operator.
+Example:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb16-1"><a href="#cb16-1"></a>x = 123</span>
+<span id="cb16-2"><a href="#cb16-2"></a>&lt;% ($$x).substr(1)</span>
+<span id="cb16-3"><a href="#cb16-3"></a>/* Outputs &quot;23&quot; */</span></code></pre></div></li>
+</ul>
+<h2 id="string-formatter">String Formatter</h2>
+<p>String formatter can be used in one of two ways:</p>
+<ul>
+<li>Via a formatted string expression:
+<code>$&quot;format&quot; arg1, arg2, ...</code></li>
+<li>Via a call to the <code>String@format()</code> method:
+<code>format_str.format(arg1, arg2, ...)</code></li>
+</ul>
+<p>Formatter syntax:</p>
+<ul>
+<li><code>{}</code> is replaced by the next argument in list</li>
+<li><code>{n}</code>, (<code>n</code> is an Int) is replaced by the
+<code>n</code>-th argument. Numbering starts with 1.</li>
+</ul>
+<p>Each format cell <code>{...}</code> can contain the following
+modifiers:</p>
+<ol start="0" type="1">
+<li>None at all (this will just be replaced by the next argument from
+the argument list). 0.5. Argument index (optional): <code>n</code>. Must
+be specified before any other modifiers.</li>
+</ol>
+<p>Other modifiers can be used in no particular order.</p>
+<ol type="1">
+<li>Preferred width: <code>%n</code>.<br />
+</li>
+<li>Alignment (left by default): <code>-l</code> for left /
+<code>-r</code> for right / <code>-c</code> for center.<br />
+</li>
+<li>Floating point precision: <code>.n</code>.</li>
+</ol>
+<h2 id="comparison-operators">Comparison Operators</h2>
+<p><code>==</code>, <code>!=</code>, <code>&gt;</code>,
+<code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code></p>
+<p>Equals operator <code>==</code> works for every type (including Units
+– in their case expression lists are compared), while all others are
+implemented only for numeric types.</p>
+<h2 id="logical-operators">Logical Operators</h2>
+<p>Binary:<br />
+<code>&amp;&amp;</code>, <code>||</code>, <code>^^</code><br />
+<br />
+Unary:<br />
+<code>!</code></p>
+<h2 id="return-operator">Return Operator</h2>
+<p>Return operator stops the execution of a <strong>Unit</strong> and
+returns the result of the provided expression’s evaluation.</p>
+<p><strong>Prefix:</strong></p>
+<ul>
+<li><code>return: expr</code> – return by <strong>partial copy</strong>
+(copies only the pointer for heap-stored types, “full” copy can then be
+made via the <code>=</code> operator).</li>
+</ul>
+<p><strong>Postfix:</strong></p>
+<ul>
+<li><code>expr!</code> – return by <strong>partial copy</strong>.</li>
+</ul>
+<h2 id="reference-operator">Reference Operator</h2>
+<p>Get a reference to the <strong>Value</strong> associated with
+identifier:<br />
+<code>**idfr</code></p>
+<p>Example:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb17-1"><a href="#cb17-1"></a>foo = 123</span>
+<span id="cb17-2"><a href="#cb17-2"></a>ref = **foo</span>
+<span id="cb17-3"><a href="#cb17-3"></a>/* Now &lt;foo&gt; and &lt;ref&gt; point at the same Value */</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a>%% ++ref    &lt;-- Outputs 124</span></code></pre></div>
+<p><br />
+<strong>Note:</strong> To assign a reference to a variable it’s always
+required to use the <code>**</code> operator before the expression being
+assigned, even if it evaluates to a reference. Otherwise, a copy of the
+value behind the reference will be assigned. Example:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb18-1"><a href="#cb18-1"></a>f = func: x -&gt; x *= 10 /* Explicit `**` is required only when assigning  */</span>
+<span id="cb18-2"><a href="#cb18-2"></a>foo = 123</span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a>bar = f(**foo)</span>
+<span id="cb18-5"><a href="#cb18-5"></a>/* `bar` is now an Int variable = 1230</span>
+<span id="cb18-6"><a href="#cb18-6"></a> * (f() call evaluated to a copy instead of reference),</span>
+<span id="cb18-7"><a href="#cb18-7"></a> * `foo` is now = 1230 */</span>
+<span id="cb18-8"><a href="#cb18-8"></a></span>
+<span id="cb18-9"><a href="#cb18-9"></a>baz = **f(**foo)</span>
+<span id="cb18-10"><a href="#cb18-10"></a>/* `baz` is now a Reference to `foo` = 12300,</span>
+<span id="cb18-11"><a href="#cb18-11"></a> * so any subsequent changes to `baz` will modify</span>
+<span id="cb18-12"><a href="#cb18-12"></a> * the value of `foo` */</span></code></pre></div>
+<h2 id="reference-related-operators">Reference-related Operators</h2>
+<ul>
+<li><code>unwrap: idfr</code> – unwraps a named reference,
+e.g. <code>x = **y; unwrap: x</code> – <code>x</code> becomes a copy of
+<code>y</code> instead of the reference to its value. Returns a
+reference to the unwrapped identifier.</li>
+<li><code>is_reference: expr</code> – returns true if <code>expr</code>
+evaluates to a Reference</li>
+<li><code>expr!!</code> – returns a copy of the value behind the
+reference <code>expr</code></li>
+</ul>
+<h2 id="conditional-ternary-operator">Conditional (Ternary)
+Operator</h2>
+<p><code>condition ? expr_then : expr_else</code></p>
+<p>The condition is converted to Boolean and if true, the
+<strong>Then</strong> expression is evaluated and returned; otherwise –
+the <strong>Else</strong> expression result is returned.</p>
+<h2 id="range-expression">Range Expression</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb19-1"><a href="#cb19-1"></a>start..end[..step]</span></code></pre></div>
+<p>Evaluates to a <code>Range</code> object (an <code>IntRange</code> or
+a <code>FloatRange</code> depending on <code>start</code>,
+<code>end</code> and <code>step</code> value types) that implements the
+<code>Iterable</code> interface. Ranges are end-exclusive.<br />
+Can be used for:</p>
+<ul>
+<li>Short form for loops:
+<code>(1..10)[do: f: n -&gt; foo(n)]</code><br />
+</li>
+<li>Container slicing: <code>list[start..end]</code> – evaluates to a
+new sublist with elements <code>start</code> to <code>end</code>
+exclusively</li>
+</ul>
+<h1 id="if-else-expression">If-Else Expression</h1>
+<p>If-else expression in <strong>Methan0l</strong> uses the same syntax
+as ternary operator, but with <code>if</code> and <code>else</code>
+keywords used before the conditions and in between the
+<strong>then</strong> and <strong>else</strong> branches:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb20-1"><a href="#cb20-1"></a>/* if-else */</span>
+<span id="cb20-2"><a href="#cb20-2"></a>if (condition) ? {</span>
+<span id="cb20-3"><a href="#cb20-3"></a>    expr1</span>
+<span id="cb20-4"><a href="#cb20-4"></a>    ...</span>
+<span id="cb20-5"><a href="#cb20-5"></a>} else: {</span>
+<span id="cb20-6"><a href="#cb20-6"></a>    else_expr1</span>
+<span id="cb20-7"><a href="#cb20-7"></a>    ...</span>
+<span id="cb20-8"><a href="#cb20-8"></a>}</span>
+<span id="cb20-9"><a href="#cb20-9"></a></span>
+<span id="cb20-10"><a href="#cb20-10"></a>/* if only */</span>
+<span id="cb20-11"><a href="#cb20-11"></a>if (condition) ? {</span>
+<span id="cb20-12"><a href="#cb20-12"></a>    expr1</span>
+<span id="cb20-13"><a href="#cb20-13"></a>    ...</span>
+<span id="cb20-14"><a href="#cb20-14"></a>}</span>
+<span id="cb20-15"><a href="#cb20-15"></a></span>
+<span id="cb20-16"><a href="#cb20-16"></a>/* if-elseif-...-else */</span>
+<span id="cb20-17"><a href="#cb20-17"></a>if (condition1) ? {</span>
+<span id="cb20-18"><a href="#cb20-18"></a>    expr1</span>
+<span id="cb20-19"><a href="#cb20-19"></a>    ...</span>
+<span id="cb20-20"><a href="#cb20-20"></a>} else: if (condition2) ? {</span>
+<span id="cb20-21"><a href="#cb20-21"></a>    elseif_expr1</span>
+<span id="cb20-22"><a href="#cb20-22"></a>    ...</span>
+<span id="cb20-23"><a href="#cb20-23"></a>} else: {</span>
+<span id="cb20-24"><a href="#cb20-24"></a>    else_expr1</span>
+<span id="cb20-25"><a href="#cb20-25"></a>    ...</span>
+<span id="cb20-26"><a href="#cb20-26"></a>}</span></code></pre></div>
+<h1 id="loops">Loops</h1>
+<p>There are 3 types of loops in Methan0l. As with any other block
+expression, braces can be omitted for single expression loops.</p>
+<h2 id="for-loop">For Loop</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb21-1"><a href="#cb21-1"></a>for (i = 0, i &lt; 10, ++i) {</span>
+<span id="cb21-2"><a href="#cb21-2"></a>    ...</span>
+<span id="cb21-3"><a href="#cb21-3"></a>}</span></code></pre></div>
+<h2 id="while-loop">While Loop</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb22-1"><a href="#cb22-1"></a>while (i &lt; 10) {</span>
+<span id="cb22-2"><a href="#cb22-2"></a>    ...</span>
+<span id="cb22-3"><a href="#cb22-3"></a>    ++i</span>
+<span id="cb22-4"><a href="#cb22-4"></a>}</span></code></pre></div>
+<h2 id="for-each-loop">For-each Loop</h2>
+<p>Allows to iterate over any object, which class implements
+<code>Iterable</code>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb23-1"><a href="#cb23-1"></a>for (as_elem, iterable) {</span>
+<span id="cb23-2"><a href="#cb23-2"></a>    ...</span>
+<span id="cb23-3"><a href="#cb23-3"></a>}</span></code></pre></div>
+<h2 id="break-expression">Break Expression</h2>
+<p>You can interrupt a loop via the break expression:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb24-1"><a href="#cb24-1"></a>return: break</span></code></pre></div>
+<h1 id="try-catch-expression">Try-catch Expression</h1>
+<p>During a program’s execution exceptions may be thrown either by the
+interpreter itself or native modules or by using the
+<code>die(expr)</code> function, where <code>expr</code> can be of any
+type and can be caught inside of a try-catch expression:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb25-1"><a href="#cb25-1"></a>try {</span>
+<span id="cb25-2"><a href="#cb25-2"></a>    ...</span>
+<span id="cb25-3"><a href="#cb25-3"></a>} catch: name {</span>
+<span id="cb25-4"><a href="#cb25-4"></a>    ...</span>
+<span id="cb25-5"><a href="#cb25-5"></a>}</span></code></pre></div>
+<h1 id="units">Units</h1>
+<p>There are 2 types of units: <strong>regular</strong> and
+<strong>weak</strong>. The difference between them lies in scope
+visibility and execution termination rules.</p>
+<h2 id="regular-units">Regular Units</h2>
+<p><strong>Regular</strong> unit is a strongly scoped block of
+expressions (see <a href="#visibility-scopes">visibility scopes</a>
+section).<br />
+When a return expression is executed, regular unit stops its execution
+and yields the value being returned as its evaluation result.</p>
+<p>Function bodies are <strong>regular</strong> units.</p>
+<p><strong>Regular</strong> units can be defined using the following
+syntax:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb26-1"><a href="#cb26-1"></a>unit = {</span>
+<span id="cb26-2"><a href="#cb26-2"></a>    expr</span>
+<span id="cb26-3"><a href="#cb26-3"></a>    expr</span>
+<span id="cb26-4"><a href="#cb26-4"></a>    ...</span>
+<span id="cb26-5"><a href="#cb26-5"></a>}</span></code></pre></div>
+<p>If assigned to an identifier, a unit then can be called either using
+identifier expression’s execution syntax (returned value will be
+discarded in this case):</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb27-1"><a href="#cb27-1"></a>unit    /* &lt;-- calls the unit defined above */</span></code></pre></div>
+<p>or using the function invocation syntax:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb28-1"><a href="#cb28-1"></a>result = unit() /* &lt;-- unit&#39;s return will be captured, if exists */</span></code></pre></div>
+<h2 id="weak-units">Weak Units</h2>
+<p><strong>Weak</strong> units are weakly-scoped expression blocks and
+can access identifiers from the scopes above the current one up to the
+first <strong>regular</strong> unit without using the <strong>#</strong>
+prefix or importing references.</p>
+<p>Return from a <strong>weak</strong> unit also causes all subsequent
+<strong>weak</strong> units stop their execution and carry the returned
+value up to the first <strong>regular</strong> unit, causing it stop its
+execution and yield the carried value as its return value.</p>
+<p>Loops, if-else expressions and lambdas are <strong>weak</strong>
+units.</p>
+<p>Weak unit definition syntax:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb29-1"><a href="#cb29-1"></a>-&gt; {</span>
+<span id="cb29-2"><a href="#cb29-2"></a>    expr1</span>
+<span id="cb29-3"><a href="#cb29-3"></a>    expr2</span>
+<span id="cb29-4"><a href="#cb29-4"></a>    ...</span>
+<span id="cb29-5"><a href="#cb29-5"></a>}</span></code></pre></div>
+<h2 id="box-units">Box Units</h2>
+<p><strong>Box unit</strong> preserves its data table after the
+execution and is executed automatically on definition. Fields inside it
+can then be accessed by using the <code>.</code> operator.</p>
+<p>Modules loaded via the <code>load(path)</code> function or the
+<code>import: path</code> operator are <strong>box units</strong>.</p>
+<p>Box unit definition syntax:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb30-1"><a href="#cb30-1"></a>module = box {</span>
+<span id="cb30-2"><a href="#cb30-2"></a>    some_field = &quot;Blah blah blah&quot;</span>
+<span id="cb30-3"><a href="#cb30-3"></a>    foo = func @(x) {</span>
+<span id="cb30-4"><a href="#cb30-4"></a>        x.pow(2)!</span>
+<span id="cb30-5"><a href="#cb30-5"></a>    }</span>
+<span id="cb30-6"><a href="#cb30-6"></a>}</span>
+<span id="cb30-7"><a href="#cb30-7"></a></span>
+<span id="cb30-8"><a href="#cb30-8"></a>&lt;% module.foo(5)    /* Prints 25 */</span>
+<span id="cb30-9"><a href="#cb30-9"></a>&lt;% module.some_field    /* Prints contents of the field */</span></code></pre></div>
+<p><br />
+Any non-persistent unit can also be converted to <strong>box</strong>
+unit using <code>make_box(Unit)</code> function.</p>
+<p><strong>Box</strong> units as well as non-persistent ones can also be
+imported into the current scope:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb31-1"><a href="#cb31-1"></a>module.import()</span></code></pre></div>
+<p>This effectively executes all expressions of <code>module</code> in
+the current scope.</p>
+<h2 id="pseudo-function-invocation">Pseudo-function Invocation</h2>
+<p><strong>Units</strong> can also be invoked with a single
+<code>Unit</code> argument (<strong>Init Block</strong>). <strong>Init
+block</strong> will be executed before the <strong>Unit</strong> being
+invoked and the resulting data table (which stores all identifiers local
+to unit) will be shared between them.</p>
+<p>This syntax can be used to “inject” identifiers into a unit when
+calling it, for example:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb32-1"><a href="#cb32-1"></a>ratio = {</span>
+<span id="cb32-2"><a href="#cb32-2"></a>    if (b == 0) ? &quot;inf&quot;!</span>
+<span id="cb32-3"><a href="#cb32-3"></a>    return: (a / b) * 100.0</span>
+<span id="cb32-4"><a href="#cb32-4"></a>}</span>
+<span id="cb32-5"><a href="#cb32-5"></a></span>
+<span id="cb32-6"><a href="#cb32-6"></a>&lt;% &quot;a is &quot; :: ratio({a = 3; b = 10}) :: &quot;% of b&quot;</span></code></pre></div>
+<h1 id="functions">Functions</h1>
+<p>Functions accept a list of values and return some value (or
+<strong>nil</strong> when no return occurs).</p>
+<h2 id="function-definition-syntax">Function Definition Syntax</h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb33-1"><a href="#cb33-1"></a>foo = func (arg1, arg2, arg3 =&gt; def_value, ...) {</span>
+<span id="cb33-2"><a href="#cb33-2"></a>    ...</span>
+<span id="cb33-3"><a href="#cb33-3"></a>}</span></code></pre></div>
+<p><br />
+Or:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb34-1"><a href="#cb34-1"></a>foo = func: arg1, arg2, arg3 =&gt; def_value, ... {</span>
+<span id="cb34-2"><a href="#cb34-2"></a>    ...</span>
+<span id="cb34-3"><a href="#cb34-3"></a>}</span></code></pre></div>
+<p><br />
+If function’s body contains only one expression, <code>{</code> &amp;
+<code>}</code> braces can be omitted:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb35-1"><a href="#cb35-1"></a>foo = func: x</span>
+<span id="cb35-2"><a href="#cb35-2"></a>    do_stuff(x)</span></code></pre></div>
+<h2 id="implicit-return-short-form">Implicit Return Short Form</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb36-1"><a href="#cb36-1"></a>foo = func: x, y -&gt; x + y</span></code></pre></div>
+<p>Here the expression after the <code>-&gt;</code> token is wrapped in
+a <code>return</code> expression, so its result will be returned from
+the function without needing to explicitly use the <code>return</code>
+operator.</p>
+<h2 id="multi-expression-short-form">Multi-expression Short Form</h2>
+<p>In this case no return expression is generated automatically.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb37-1"><a href="#cb37-1"></a>bar = func: () -&gt; a = 123, b = 456, out = a * b, out!</span></code></pre></div>
+<h2 id="lambdas">Lambdas</h2>
+<p>Can be defined by using <code>@:</code> or <code>f:</code> function
+prefix instead of <code>func:</code>:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb38-1"><a href="#cb38-1"></a>foo = @: x</span>
+<span id="cb38-2"><a href="#cb38-2"></a>    do_stuff(x)</span></code></pre></div>
+<p>Or:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb39-1"><a href="#cb39-1"></a>foo = f: x</span>
+<span id="cb39-2"><a href="#cb39-2"></a>    return: x.pow(2)</span></code></pre></div>
+<p>Lambdas can also be used with implicit return and multi-expression
+short form of function body definition. However, they can’t use the
+parenthesized argument definition form (only when a lambda accepts no
+arguments: <code>foo = f: () -&gt; do_something()</code>).</p>
+<p>The key difference between lambdas and regular functions is that
+lambdas’ bodies are <strong>weak units</strong>, which means that it’s
+possible to access variables from their parent scopes without using
+global access syntax:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb40-1"><a href="#cb40-1"></a>glob = &quot;foo bar&quot;</span>
+<span id="cb40-2"><a href="#cb40-2"></a>lambda = @: x</span>
+<span id="cb40-3"><a href="#cb40-3"></a>    glob[] = x</span>
+<span id="cb40-4"><a href="#cb40-4"></a></span>
+<span id="cb40-5"><a href="#cb40-5"></a>lambda(&quot; baz&quot;) /* Appends &quot; baz&quot; to the global variable `glob` */</span></code></pre></div>
+<h2 id="documenting-functions">Documenting Functions</h2>
+<p>When documenting Methan0l functions or methods, the following
+notation style should be used:</p>
+<h3 id="return-type">Return type</h3>
+<ul>
+<li><p>Specify return type with <code>-&gt;</code> token:<br />
+<code>function() -&gt; ReturnType</code></p></li>
+<li><p>If function can return any value, use <code>Value</code> after
+<code>-&gt;</code>.</p></li>
+<li><p>If function doesn’t have a return value, <code>-&gt;</code> can
+be omitted:<br />
+<code>non_returning_function()</code></p></li>
+</ul>
+<h3 id="argument-list">Argument List</h3>
+<ul>
+<li><p>Specify arguments of any type:<br />
+<code>function(a, b, c)</code></p></li>
+<li><p>Specify argument types:<br />
+<code>function(Int a, Boolean b)</code></p></li>
+<li><p>Specify arguments with default values:<br />
+<code>function(a, [String b = &quot;default&quot;])</code></p></li>
+</ul>
+<h3 id="inherited-methods">Inherited Methods</h3>
+<p>When documenting methods inherited from a superclass or provided by
+an interface, use the following notation:</p>
+<p><code>superclass_method(arg) -&gt; Class</code> <em>@
+SuperClass</em></p>
+<h2 id="calling-functions">Calling Functions</h2>
+<p>Functions can be called using <strong>invocation syntax</strong>:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb41-1"><a href="#cb41-1"></a>result = foo(expr1, expr2, ...)</span></code></pre></div>
+<p><br />
+Functions can also be called by using <strong>pseudo-method</strong>
+syntax when the first argument is a built-in non-class type:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb42-1"><a href="#cb42-1"></a>value.func(arg1, arg2, ...)</span></code></pre></div>
+<p>The expression above is internally rewritten as
+<code>func(value, arg1, arg2, ...)</code> when <code>value</code> is a
+primitive type, for example:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb43-1"><a href="#cb43-1"></a>42.sqrt()</span></code></pre></div>
+<h1 id="unevaluated-expressions-1">Unevaluated Expressions</h1>
+<p>Can be created by using the following syntax:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb44-1"><a href="#cb44-1"></a>foo = noeval: expr</span></code></pre></div>
+<p>In this case <code>expr</code> won’t be evaluated until the
+evaluation of <code>foo</code>. When <code>foo</code> gets evaluated or
+executed, a new temporary value containing <code>expr</code>’s
+evaluation result is created and used in place of <code>foo</code> while
+<code>foo</code>’s contents remain unevaluated.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb45-1"><a href="#cb45-1"></a>x = noeval: y * 2</span>
+<span id="cb45-2"><a href="#cb45-2"></a>y = 2</span>
+<span id="cb45-3"><a href="#cb45-3"></a></span>
+<span id="cb45-4"><a href="#cb45-4"></a>/* Equivalent to x = 2 + 2 * 2 */</span>
+<span id="cb45-5"><a href="#cb45-5"></a>&lt;% &quot;Result: &quot; :: (x += y)</span></code></pre></div>
+<p><br></p>
+<h1 id="classes">Classes</h1>
+<p>Even though Methan0l is not a pure OOP language, it supports classes
+with inheritance, interfaces and operator overloading.</p>
+<p>Class definition syntax:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb46-1"><a href="#cb46-1"></a>class: ClassName {</span>
+<span id="cb46-2"><a href="#cb46-2"></a>    ...</span>
+<span id="cb46-3"><a href="#cb46-3"></a>}</span></code></pre></div>
+<p>Class member (field, method, static method) definition follows the
+key-value syntax:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb47-1"><a href="#cb47-1"></a>member =&gt; ...</span></code></pre></div>
+<h2 id="fields">Fields</h2>
+<p>Fields can be initialized via the syntax mentioned above or defined
+just by mentioning their name in the class body:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb48-1"><a href="#cb48-1"></a>class: ClassName {</span>
+<span id="cb48-2"><a href="#cb48-2"></a>    field1, field2</span>
+<span id="cb48-3"><a href="#cb48-3"></a>    field3 =&gt; 123</span>
+<span id="cb48-4"><a href="#cb48-4"></a>}</span></code></pre></div>
+<h2 id="methods">Methods</h2>
+<p>Methods can be defined using the function definition syntax, but with
+<code>method</code> keyword instead of <code>func</code>:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb49-1"><a href="#cb49-1"></a>class: ClassName {</span>
+<span id="cb49-2"><a href="#cb49-2"></a>    ...</span>
+<span id="cb49-3"><a href="#cb49-3"></a></span>
+<span id="cb49-4"><a href="#cb49-4"></a>    foo =&gt; method: arg1, arg2 {</span>
+<span id="cb49-5"><a href="#cb49-5"></a>        &lt;% &quot;ClassName@foo()&quot;</span>
+<span id="cb49-6"><a href="#cb49-6"></a>        this.field1 = arg1</span>
+<span id="cb49-7"><a href="#cb49-7"></a>        this.field2 = arg2</span>
+<span id="cb49-8"><a href="#cb49-8"></a>    }</span>
+<span id="cb49-9"><a href="#cb49-9"></a>}</span></code></pre></div>
+<p>Methods or fields of an object can be accessed by using the
+<code>.</code> operator:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb50-1"><a href="#cb50-1"></a>foo = obj.field</span>
+<span id="cb50-2"><a href="#cb50-2"></a>obj.some_method(arg1, arg2, ...)</span></code></pre></div>
+<p>Methods can also be static. Static methods are independent from any
+particular object and can be called on the class itself using the
+<code>@</code> token instead of <code>.</code>
+(e.g. <code>ClassName@static_method(...)</code>):</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb51-1"><a href="#cb51-1"></a>class: ClassName {</span>
+<span id="cb51-2"><a href="#cb51-2"></a>    ...</span>
+<span id="cb51-3"><a href="#cb51-3"></a></span>
+<span id="cb51-4"><a href="#cb51-4"></a>    static_method =&gt; func: x {</span>
+<span id="cb51-5"><a href="#cb51-5"></a>        &lt;% $&quot;Static method arg: {}&quot; x</span>
+<span id="cb51-6"><a href="#cb51-6"></a>    }</span>
+<span id="cb51-7"><a href="#cb51-7"></a>}</span></code></pre></div>
+<p>To distinguish static methods from non-static ones, the
+<code>func</code> keyword can be used instead of <code>method</code>
+when defining them.</p>
+<h2 id="constructor">Constructor</h2>
+<p>Constructors are defined by defining a special method named
+<code>construct</code>.</p>
+<p>Each class can only have one constructor.</p>
+<p>Contructor definition syntax:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb52-1"><a href="#cb52-1"></a>class: ClassName {</span>
+<span id="cb52-2"><a href="#cb52-2"></a>    ...</span>
+<span id="cb52-3"><a href="#cb52-3"></a></span>
+<span id="cb52-4"><a href="#cb52-4"></a>    construct =&gt; method: arg1, arg2, arg3 {</span>
+<span id="cb52-5"><a href="#cb52-5"></a>        this.field1 = arg1 + arg2 + arg3</span>
+<span id="cb52-6"><a href="#cb52-6"></a>        this.field2 = &quot;stuff&quot;</span>
+<span id="cb52-7"><a href="#cb52-7"></a>    }</span>
+<span id="cb52-8"><a href="#cb52-8"></a>}</span></code></pre></div>
+<p>Object construction syntax:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb53-1"><a href="#cb53-1"></a>obj = new: ClassName(arg1, arg2, arg3)</span></code></pre></div>
+<h2 id="inheritance">Inheritance</h2>
+<p>Methan0l classes can only inherit from one superclass at a time and
+implement multiple interfaces.</p>
+<p>Constructor is inherited along with all other superclass methods.</p>
+<p>Inheritance syntax:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb54-1"><a href="#cb54-1"></a>class: Derived base: ClassName {</span>
+<span id="cb54-2"><a href="#cb54-2"></a>    ...</span>
+<span id="cb54-3"><a href="#cb54-3"></a>}</span></code></pre></div>
+<h3 id="method-overriding">Method Overriding</h3>
+<p>To override a superclass method, just re-define it. The parent
+version of the method can be called using the static invocation syntax
+with <code>this</code> reference passed explicitly:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb55-1"><a href="#cb55-1"></a>class: Derived base: ClassName {</span>
+<span id="cb55-2"><a href="#cb55-2"></a>    ...</span>
+<span id="cb55-3"><a href="#cb55-3"></a></span>
+<span id="cb55-4"><a href="#cb55-4"></a>    foo =&gt; method: arg1, arg2 {</span>
+<span id="cb55-5"><a href="#cb55-5"></a>        ClassName@method(this, arg1, arg2)</span>
+<span id="cb55-6"><a href="#cb55-6"></a>        &lt;% &quot;Derived@foo()&quot;</span>
+<span id="cb55-7"><a href="#cb55-7"></a>    }</span>
+<span id="cb55-8"><a href="#cb55-8"></a>}</span></code></pre></div>
+<h2 id="operator-overloading">Operator Overloading</h2>
+<p>To overload an operator, specify its name as a string literal and
+then define it as a method:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb56-1"><a href="#cb56-1"></a>class: Foo {</span>
+<span id="cb56-2"><a href="#cb56-2"></a>    ...</span>
+<span id="cb56-3"><a href="#cb56-3"></a>    </span>
+<span id="cb56-4"><a href="#cb56-4"></a>    &quot;+&quot; =&gt; method: rhs {</span>
+<span id="cb56-5"><a href="#cb56-5"></a>        return: new: Foo()</span>
+<span id="cb56-6"><a href="#cb56-6"></a>    }</span>
+<span id="cb56-7"><a href="#cb56-7"></a></span>
+<span id="cb56-8"><a href="#cb56-8"></a>    &quot;*=&quot; =&gt; method: rhs {</span>
+<span id="cb56-9"><a href="#cb56-9"></a>        &lt;% &quot;Overloaded compound assignment&quot;</span>
+<span id="cb56-10"><a href="#cb56-10"></a>        return: this</span>
+<span id="cb56-11"><a href="#cb56-11"></a>    }</span>
+<span id="cb56-12"><a href="#cb56-12"></a>}</span></code></pre></div>
+<h2 id="index-operator-overloading">Index Operator Overloading</h2>
+<p>All of index operator subtypes can be overloaded for user-defined
+classes. Overload names should be quoted.</p>
+<ul>
+<li>Get an element: <code>container[expr]</code>. Overload as:
+<code>&quot;[]&quot; =&gt; method: idx {...}</code>.<br />
+</li>
+<li>Append an element: <code>container[] = expr</code>. Overload as:
+<code>&quot;append[]&quot; =&gt; method: () {...}</code>.<br />
+</li>
+<li>Remove element: <code>container[~expr]</code>. Overload as:
+<code>&quot;remove[]&quot; =&gt; method: idx {...}</code>.<br />
+</li>
+<li>Clear: <code>container[~]</code>. Overload as:
+<code>&quot;clear[]&quot; =&gt; method: () {...}</code>.<br />
+</li>
+<li>Iterate over a container: <code>container[do: Function]</code>.
+Overload as: <code>&quot;foreach[]&quot; =&gt; method: action {...}</code>.<br />
+</li>
+<li>Insert into a container: <code>container[-&gt;expr]</code>. Overload
+as: <code>&quot;insert[]&quot; =&gt; method: elem {...}</code>.<br />
+</li>
+<li>Slice a container: <code>container[start..end[..step]]</code>.
+Overload as: <code>&quot;slice[]&quot; =&gt; method: range {...}</code>.</li>
+</ul>
+<h2 id="copying-objects">Copying Objects</h2>
+<p>Objects can be copied using <code>copy: obj</code> operator.</p>
+<h2 id="anonymous-objects">Anonymous Objects</h2>
+<p>Methan0l supports anonymous objects which can be used to pass around
+multiple named values.</p>
+<p>Anonymous objects can also work as prototypes: when used in the RHS
+of the <code>new</code> operator, a deep copy of the object is created
+and then its constructor (if defined) is invoked
+(e.g. <code>new_anon_obj = new: anon_obj(123)</code>, where
+<code>anon_obj</code> is an anonymous object with defined
+constructor).<br />
+Methods defined inside anonymous objects (including constructor) must
+have an explicit <code>this</code> argument in their parameter
+list.<br />
+Generally, defining methods inside such objects is a huge overhead as
+they are stored inside the object’s data table and are copied along with
+new objects when used inside of <code>new</code> or <code>copy</code>
+operator.</p>
+<p>Example of anonymous object usage:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb57-1"><a href="#cb57-1"></a>{</span>
+<span id="cb57-2"><a href="#cb57-2"></a>    obj = new: @[</span>
+<span id="cb57-3"><a href="#cb57-3"></a>        x =&gt; 123</span>
+<span id="cb57-4"><a href="#cb57-4"></a>        y =&gt; &quot;some text&quot;</span>
+<span id="cb57-5"><a href="#cb57-5"></a></span>
+<span id="cb57-6"><a href="#cb57-6"></a>        some_func =&gt; func: x</span>
+<span id="cb57-7"><a href="#cb57-7"></a>            return: x * 10</span>
+<span id="cb57-8"><a href="#cb57-8"></a></span>
+<span id="cb57-9"><a href="#cb57-9"></a>        foo =&gt; method: this, n</span>
+<span id="cb57-10"><a href="#cb57-10"></a>            return: this.x * n</span>
+<span id="cb57-11"><a href="#cb57-11"></a>    ]</span>
+<span id="cb57-12"><a href="#cb57-12"></a></span>
+<span id="cb57-13"><a href="#cb57-13"></a>    &lt;% &quot;obj.x = &quot; :: obj.x</span>
+<span id="cb57-14"><a href="#cb57-14"></a>    &lt;% &quot;Anonymous object method call: &quot; :: obj.foo(2)</span>
+<span id="cb57-15"><a href="#cb57-15"></a></span>
+<span id="cb57-16"><a href="#cb57-16"></a>    /* For now there&#39;s no other way to do this */</span>
+<span id="cb57-17"><a href="#cb57-17"></a>    &lt;% &quot;Regular function: &quot; :: obj.get_method(&quot;some_func&quot;)(42)</span>
+<span id="cb57-18"><a href="#cb57-18"></a>}</span></code></pre></div>
+<p>Output:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb58-1"><a href="#cb58-1"></a>obj.x = 123</span>
+<span id="cb58-2"><a href="#cb58-2"></a>Anonymous object method call: 246</span>
+<span id="cb58-3"><a href="#cb58-3"></a>Regular function: 420</span></code></pre></div>
+<h2 id="reflection">Reflection</h2>
+<p>Get class’s unique id: <code>class_id()</code>. Can be invoked as a
+static method or as a method of an object:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb59-1"><a href="#cb59-1"></a>obj = Class.new(a, b, c)</span>
+<span id="cb59-2"><a href="#cb59-2"></a>obj.class_id() == Class@class_id()</span>
+<span id="cb59-3"><a href="#cb59-3"></a>/* ^^ Evaluates to true ^^ */</span></code></pre></div>
+<p>Get all fields / methods of a class:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb60-1"><a href="#cb60-1"></a>Class@get_fields() -&gt; List</span>
+<span id="cb60-2"><a href="#cb60-2"></a>Class@get_methods() -&gt; List</span></code></pre></div>
+<p>These methods return lists of class’ field / method names.<br />
+Specific fields can then be accessed from this class’ instance by name
+using the <code>Class@get_field(name) -&gt; Value</code> method,
+e.g:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb61-1"><a href="#cb61-1"></a>obj = new: SomeClass(42)</span>
+<span id="cb61-2"><a href="#cb61-2"></a>fields = SomeClass@get_fields()</span>
+<span id="cb61-3"><a href="#cb61-3"></a>&lt;% $&quot;Some field of `obj`: {}&quot; obj.get_field(fields[0])</span></code></pre></div>
+<p>Specific methods can be invoked by name via the
+<code>Class@get_method(name)</code> static method:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb62-1"><a href="#cb62-1"></a>methods = SomeClass@get_methods()</span>
+<span id="cb62-2"><a href="#cb62-2"></a>SomeClass@get_method(methods[0])(obj, arg1, arg2)</span></code></pre></div>
+<h1 id="path-prefixes">Path Prefixes</h1>
+<p>The following special prefixes can be used at the beginning of path
+strings everywhere in Methan0l:</p>
+<ul>
+<li><code>$:</code> - expands into interpreter home directory.<br />
+</li>
+<li><code>#:</code> - expands into script run directory.</li>
+</ul>
+<p>For example: <code>&quot;$:/modules/ncurses&quot;</code> becomes:
+<code>&quot;/opt/methan0l/modules/ncurses&quot;</code>.</p>
+<h1 id="built-in-interfaces">Built-in Interfaces</h1>
+<h2 id="iterable">Iterable</h2>
+<p>Interface <code>Iterable</code> requires classes implementing it to
+define a single method <code>iterator()</code>, which should return an
+object implementing the <code>Iterator</code> interface.<br />
+<code>Iterable</code> also provides a number of useful transformation
+methods:</p>
+<ul>
+<li><code>map(Function) -&gt; Iterable</code> - map an
+<code>Iterable</code> into another <code>Iterable</code> by applying a
+function to it. This yields an <code>Iterable</code> and doesn’t produce
+any containers or other “heavy” objects as a result.<br />
+</li>
+<li><code>filter(Function) -&gt; Iterable</code> - create an
+<code>Iterable</code> that discards all elements from the original
+<code>Iterable</code> that don’t satisfy a predicate.</li>
+<li><code>for_each(Function)</code> - perform an action for each element
+of an <code>Iterable</code>.<br />
+</li>
+<li><code>accumulate(Function) -&gt; Value</code> - apply a two-argument
+function (where the first argument is the value accumulated so far and
+the second one is an element from an <code>Iterable</code>) and return
+the accumulated result.<br />
+</li>
+<li><code>collect(Collection) -&gt; Collection</code> - insert all
+values from an <code>Iterable</code> into a <code>Collection</code> and
+return it.</li>
+</ul>
+<p><code>Iterable</code> also provides some built-in accumulative
+methods (specializations of <code>Iterable@map(Function)</code>):</p>
+<ul>
+<li><code>sum() -&gt; Float</code><br />
+</li>
+<li><code>product() -&gt; Float</code><br />
+</li>
+<li><code>mean() -&gt; Float</code><br />
+</li>
+<li><code>rms() -&gt; Float</code> - root mean squared.<br />
+</li>
+<li><code>deviation() -&gt; Float</code> - standard deviation.</li>
+</ul>
+<h2 id="iterator">Iterator</h2>
+<p>This interface describes an abstract iterator to be returned by the
+<code>Iterable@iterator()</code> method.</p>
+<p>Methods:</p>
+<ul>
+<li><code>peek() -&gt; Value</code> – should return the element the
+iterator is currently pointing at.</li>
+<li><code>next() -&gt; Value</code> – should return the current element
+and advance the iterator one element forward.</li>
+<li><code>has_next() -&gt; Boolean</code> – should return whether there
+is an element after the current one.<br />
+</li>
+<li><code>skip([Int n = 1]) -&gt; Value</code> – should skip
+<code>n</code> elements and return the element iterator is pointing at
+after the skip.<br />
+</li>
+<li><code>can_skip([Int n = 1]) -&gt; Boolean</code> – should return
+whether the iterator can skip <code>n</code> elements forward.<br />
+</li>
+<li><code>reverse()</code> – if the iterator is at the beginning of the
+sequence, this method should set current element to the last one,
+otherwise, if the iterator is at the end of the sequence, it should be
+moved to its beginning.<br />
+</li>
+<li><code>previous() -&gt; Value</code> – should return the previous
+element.<br />
+</li>
+<li><code>has_previous() -&gt; Boolean</code> – should return whether
+there is a previous element.<br />
+</li>
+<li><code>remove() -&gt; Value</code> – should remove the current
+element of the iterator.</li>
+</ul>
+<h2 id="collection">Collection</h2>
+<p><strong>Inherits</strong>: <code>Iterable</code></p>
+<p>This interface describes a collection of elements, such as a list or
+a set.</p>
+<p>Methods:</p>
+<ul>
+<li><code>add(element) -&gt; Value</code> – should add an element to the
+collection.<br />
+</li>
+<li><code>append() -&gt; Value</code> – should add a <code>nil</code>
+element to the collection and return a reference to it.<br />
+</li>
+<li><code>remove(element) -&gt; Value</code> – should remove the
+specified element from the collection.</li>
+<li><code>remove_at(Int idx) -&gt; Value</code> – should find the
+specified element and remove it from the collection.<br />
+</li>
+<li><code>get(Int idx) -&gt; Value</code> – should return a reference to
+the element at the specified index.<br />
+</li>
+<li><code>size() -&gt; Int</code> – should return the collection’s
+element count.<br />
+</li>
+<li><code>resize(Int idx)</code> – should grow / truncate the
+collection.<br />
+</li>
+<li><code>clear()</code> – should remove all elements from the
+collection.<br />
+</li>
+<li><code>is_empty() -&gt; Boolean</code> – should return whether the
+collection is empty.<br />
+</li>
+<li><code>index_of(element) -&gt; Int</code> – should find the specified
+element and return its index.<br />
+</li>
+<li><code>contains(element) -&gt; Boolean</code> – should return whether
+the collection contains the specified element.<br />
+</li>
+<li><code>iterator() -&gt; Iterator</code> <em>@ Iterable</em> – should
+produce an <code>Iterator</code> for the collection.</li>
+</ul>
+<p><code>Collection</code> also provides the following methods:</p>
+<ul>
+<li><code>fill(Value elem, [Int size = 0]) -&gt; Collection</code> –
+fills the collection with specified element. If <code>size</code> is
+specified, the collection is resized before the filling operation.<br />
+</li>
+<li><code>add_all(Collection other) -&gt; Collection</code> – adds all
+elements from <code>other</code> to this collection.<br />
+</li>
+<li><code>remove_all(Collection other) -&gt; Collection</code> – removes
+all elements that are present in <code>other</code> from this
+collection.<br />
+</li>
+<li><code>retain_all(Collection other) -&gt; Collection</code> – removes
+all elements that are not present in <code>other</code> from this
+collection.</li>
+</ul>
+<p>Operator overloads:</p>
+<ul>
+<li><code>Collection += Value</code> – appends RHS to the collection via
+the <code>add(Value)</code> method.<br />
+</li>
+<li><code>Collection -= Value</code> – removes RHS from the collection
+using the <code>remove(Value)</code> method.</li>
+</ul>
+<h2 id="abstractmap">AbstractMap</h2>
+<p><strong>Inherits</strong>: <code>Iterable</code></p>
+<p>This interface describes an abstract key-value container.</p>
+<p>Methods:</p>
+<ul>
+<li><code>add(key, value) -&gt; Value</code> – should add a
+<code>key</code> - <code>value</code> pair to the map and return the
+value previously associated with the <code>key</code> (if any).<br />
+</li>
+<li><code>remove(key) -&gt; Value</code> – should remove and return a
+value assocciated with the <code>key</code>.<br />
+</li>
+<li><code>get(key) -&gt; Value</code> – should return the value
+associated with the <code>key</code>.<br />
+</li>
+<li><code>contains_key(key) -&gt; Boolean</code> – should return whether
+the map contains the specified key.<br />
+</li>
+<li><code>size() -&gt; Int</code> – should return the map’s entry
+count.<br />
+</li>
+<li><code>clear()</code> – should remove all entries from the map.<br />
+</li>
+<li><code>is_empty() -&gt; Boolean</code> – should return whether the
+map is empty.<br />
+</li>
+<li><code>iterator() -&gt; Iterator</code> <em>@ Iterable</em> – should
+produce an <code>Iterator</code> for the map.</li>
+</ul>
+<h3 id="mapentry">MapEntry</h3>
+<p>A special utility interface designed to be used for iterating over
+maps.</p>
+<p>Methods:</p>
+<ul>
+<li><code>key() -&gt; Value</code> – should return the entry’s key.</li>
+<li><code>value() -&gt; Value</code> – should return the entry’s
+value.</li>
+</ul>
+<h2 id="range">Range</h2>
+<p><strong>Implements</strong>: <code>Iterable</code></p>
+<p>This interface describes an abstract range in form
+<code>[start, start + step, start + step * 2, ..., end]</code>.</p>
+<p>Methods:</p>
+<ul>
+<li><code>get_start() -&gt; Value</code></li>
+<li><code>get_end() -&gt; Value</code></li>
+<li><code>get_step() -&gt; Value</code></li>
+</ul>
+<h1 class="unnumbered" id="built-in-classes">Built-in Classes</h1>
+<h1 id="container-classes">Container Classes</h1>
+<h2 id="pair">Pair</h2>
+<p>Represents a pair of values.</p>
+<p>Constructor:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb63-1"><a href="#cb63-1"></a>new: Pair(a, b)</span></code></pre></div>
+<p>Methods:</p>
+<ul>
+<li><p><code>swap(b)</code> – swaps the contents of this pair with the
+pair <code>b</code>.</p></li>
+<li><p><code>x() -&gt; Value</code>, <code>y() -&gt; Value</code> –
+first and second element getters (by reference).</p></li>
+<li><p><code>swap_contents()</code> – swaps first and second
+elements.</p></li>
+</ul>
+<h2 id="list-1">List</h2>
+<p><strong>Implements</strong>: <code>Collection</code></p>
+<p>List definition syntax:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb64-1"><a href="#cb64-1"></a>list = [expr, expr, expr, ...]</span></code></pre></div>
+<p>Methods:</p>
+<ul>
+<li><code>add(element) -&gt; Value</code> – add an element to the end of
+this list.</li>
+<li><code>append() -&gt; Value</code> – creates a <code>nil</code> value
+at the end of this list and returns a reference to it.</li>
+<li><code>remove(element) -&gt; Int</code> – searches for the supplied
+element and removes it from the list. Returns the index of the deleted
+element.<br />
+</li>
+<li><code>remove_at(Int idx) -&gt; Value</code> – removes an element by
+index. Returns the deleted element.<br />
+</li>
+<li><code>get(Int idx) -&gt; Value</code> – returns a reference to the
+element at supplied index.<br />
+</li>
+<li><code>size() -&gt; Int</code> – returns the size of the list.<br />
+</li>
+<li><code>resize(Int new_size)</code> – resizes the list to specified
+size. If <code>new_size</code> is greater than <code>size()</code>,
+<code>new_size - size()</code> new <code>nil</code> elements will be
+created and appended to the list. If <code>new_size</code> is less than
+<code>size()</code>, list will be truncated.<br />
+</li>
+<li><code>clear()</code> – clears the list.<br />
+</li>
+<li><code>is_empty() -&gt; Boolean</code> – returns <code>true</code> if
+<code>size()</code> is equal to 0.</li>
+<li><code>index_of(element) -&gt; Int</code> – searches for specified
+element and returns its index.<br />
+</li>
+<li><code>contains(element) -&gt; Boolean</code> – returns
+<code>true</code> if the list contains specified element.<br />
+</li>
+<li><code>iterator() -&gt; ListIterator</code> – produces an
+<code>Iterator</code> that iterates through all elements of the
+list.</li>
+</ul>
+<p>Operator overloads:</p>
+<ul>
+<li><code>list[Int] -&gt; Value</code> – get an element by index.<br />
+</li>
+<li><code>list[] = expr</code> – append an element.<br />
+</li>
+<li><code>list[~Int] -&gt; Value</code> – remove an element by
+index.<br />
+</li>
+<li><code>list[~] -&gt; List</code> – clear the list.<br />
+</li>
+<li><code>list[do: Function] -&gt; List</code> – iterate over the
+list.<br />
+</li>
+<li><code>list[start..end[..step]] -&gt; List</code> – produce a sublist
+of this list with elements at indices in specified range.</li>
+</ul>
+<h2 id="set-1">Set</h2>
+<p><strong>Implements</strong>: <code>Collection</code></p>
+<p>Set definition syntax:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb65-1"><a href="#cb65-1"></a>set = new: Set(List)</span></code></pre></div>
+<p>Methods:</p>
+<ul>
+<li><code>add(element) -&gt; Value</code> – add the <code>element</code>
+to this set. Returns <code>true</code> if the <code>element</code>
+wasn’t present in the set before calling this method.<br />
+</li>
+<li><code>remove(element) -&gt; Boolean</code> – removes the
+<code>element</code> from this set. Returns whether this element was
+present in the set.<br />
+</li>
+<li><code>size() -&gt; Int</code> – returns the size of the set.<br />
+</li>
+<li><code>clear()</code> – clears the set.<br />
+</li>
+<li><code>is_empty() -&gt; Boolean</code> – returns <code>true</code> if
+<code>size()</code> is equal to 0.</li>
+<li><code>index_of(element) -&gt; Int</code> – searches for specified
+element and returns its index.<br />
+</li>
+<li><code>contains(element) -&gt; Boolean</code> – returns
+<code>true</code> if the set contains specified element.<br />
+</li>
+<li><code>iterator() -&gt; SetIterator</code> – produces an
+<code>Iterator</code> that iterates through all elements of the
+set.<br />
+</li>
+<li><code>a.union(b) -&gt; Set</code> – produces a new <code>Set</code>
+that contains the union of this set and set <code>b</code>.<br />
+</li>
+<li><code>a.intersect(b) -&gt; Set</code> – produces a new
+<code>Set</code> that contains the intersection of this set and set
+<code>b</code>.<br />
+</li>
+<li><code>a.diff(b) -&gt; Set</code> – produces a new <code>Set</code>
+that contains the difference of this set and set <code>b</code>.<br />
+</li>
+<li>Symmetric difference: <code>a.symdiff(b)</code> – produces a new
+<code>Set</code> that contains the symmetric difference of this set and
+set <code>b</code>.</li>
+</ul>
+<p>Operator overloads:</p>
+<ul>
+<li><code>set[-&gt;expr] -&gt; Boolean</code> – insert an element into
+this set.<br />
+</li>
+<li><code>set[Value] -&gt; Boolean</code> – test if an element is
+present in the set.<br />
+</li>
+<li><code>set[~Value] -&gt; Boolean</code> – remove an element from the
+set.<br />
+</li>
+<li><code>set[~] -&gt; Set</code> – clear the list.<br />
+</li>
+<li><code>set[do: Function] -&gt; Set</code> – iterate over the
+set.<br />
+</li>
+<li><code>set[start..end[..step]] -&gt; Set</code> – produce a subset of
+this set with elements at indices in specified range.</li>
+</ul>
+<h2 id="string-1">String</h2>
+<p><strong>Implements</strong>: <code>Collection</code></p>
+<p>String definition syntax:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb66-1"><a href="#cb66-1"></a>str = &quot;some text&quot;</span>
+<span id="cb66-2"><a href="#cb66-2"></a>str = new: String()</span>
+<span id="cb66-3"><a href="#cb66-3"></a>str = new: String(other_string)</span></code></pre></div>
+<p>Methods:</p>
+<ul>
+<li><p><code>format(Value args...) -&gt; String</code> – produce a new
+string formatted using the string formatter according to this string and
+supplied arguments.</p></li>
+<li><p><code>substr(start, [length]) -&gt; String</code> – returns a
+substring of the specified string, starting from the
+<code>start</code>’th character. If length is not specified, the
+remainder is used.</p></li>
+<li><p><code>find(substr, [start_pos]) -&gt; Int</code> – returns index
+of <code>substr</code> inside the specified string. If not found,
+<code>-1</code> is returned instead.</p></li>
+<li><p><code>contains(substr) -&gt; Boolean</code> – returns
+<code>true</code> if specified string contains <code>substr</code> at
+least once.</p></li>
+<li><p><code>split(delim_expr) -&gt; List</code> – returns a
+<strong>List</strong> of tokens.</p></li>
+<li><p><code>repeat(Int times)</code> – produce a new string containing
+this string repeated <code>times</code> times.</p></li>
+<li><p><code>erase(Int start, [Int length])</code> – erases a substring
+from the specified string, starting from the <code>start</code>’th
+character. If length is not specified, the remainder is used.</p></li>
+<li><p><code>replace(from_str, to_str, [limit])</code> – replace
+<code>limit</code> occurrences of <code>from_str</code> with
+<code>to_str</code>. If limit is not specified, all occurrences will be
+replaced.</p></li>
+<li><p><code>insert(pos, substr)</code> – insert <code>substr</code>
+after the <code>pos</code>’th character of the provided string.</p></li>
+<li><p><code>append(String)</code> – appends a string to this
+string.</p></li>
+<li><p><code>concat(String other)</code> – produces a new string
+containing this string and <code>other</code> joined together.</p></li>
+<li><p><code>add(String) -&gt; String</code> – appends a string /
+character to this string.</p></li>
+<li><p><code>remove(Character) -&gt; Int</code> – searches for the first
+occurrence of the supplied character and removes it from the string.
+Returns the index of the deleted character.</p></li>
+<li><p><code>remove_at(Int idx) -&gt; Character</code> – removes a
+character by index. Returns the deleted character.</p></li>
+<li><p><code>get(Int idx) -&gt; Character</code> – returns a character
+at supplied index.</p></li>
+<li><p><code>size() -&gt; Int</code> – returns the size of the
+string.</p></li>
+<li><p><code>resize(Int new_size)</code> – resizes the string to
+specified size. If <code>new_size</code> is greater than
+<code>size()</code>, <code>new_size - size()</code> new null characters
+will be created and appended to the string. If <code>new_size</code> is
+less than <code>size()</code>, string will be truncated.</p></li>
+<li><p><code>clear()</code> – clears the string.</p></li>
+<li><p><code>is_empty() -&gt; Boolean</code> – returns <code>true</code>
+if <code>size()</code> is equal to 0.</p></li>
+<li><p><code>index_of(Character) -&gt; Int</code> – searches for the
+first occurrence of specified character and returns its index.</p></li>
+<li><p><code>contains(Character) -&gt; Boolean</code> – returns
+<code>true</code> if the string contains specified character.</p></li>
+<li><p><code>iterator() -&gt; StringIterator</code> – produces an
+<code>Iterator</code> that iterates through all characters of the
+string.</p></li>
+</ul>
+<p>Operator overloads:</p>
+<ul>
+<li><code>string[Int] -&gt; Value</code> – get a character by
+index.<br />
+</li>
+<li><code>string[] = expr</code> – append a string / character.<br />
+</li>
+<li><code>string[~Int] -&gt; Value</code> – remove a character by
+index.<br />
+</li>
+<li><code>string[~] -&gt; List</code> – clear the string.<br />
+</li>
+<li><code>string[do: Function] -&gt; List</code> – iterate over the
+string.<br />
+</li>
+<li><code>string[start..end[..step]] -&gt; List</code> – produce a
+substring of this string with characters at indices in specified
+range.</li>
+</ul>
+<h2 id="map-1">Map</h2>
+<p><strong>Implements</strong>: <code>AbstractMap</code></p>
+<p>Map definition syntax:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb67-1"><a href="#cb67-1"></a>map = @[</span>
+<span id="cb67-2"><a href="#cb67-2"></a>    key1 =&gt; val1</span>
+<span id="cb67-3"><a href="#cb67-3"></a>    key2 =&gt; val2</span>
+<span id="cb67-4"><a href="#cb67-4"></a>    ...</span>
+<span id="cb67-5"><a href="#cb67-5"></a>]</span></code></pre></div>
+<p>Or:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb68-1"><a href="#cb68-1"></a>map = new: Map()</span></code></pre></div>
+<p>Methods:</p>
+<p>Implements all methods declared by the <a href="#abstractmap">AbstractMap</a> interface along with:</p>
+<ul>
+<li><p><code>iterator() -&gt; MapIterator</code> – produces an
+<code>Iterator</code> that iterates through all key-value pairs of this
+map represented by <code>MapEntry</code> objects.<br />
+So, to iterate over a map, you can do somethig like this:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb69-1"><a href="#cb69-1"></a>for (entry, map) {</span>
+<span id="cb69-2"><a href="#cb69-2"></a>  key = entry.key()</span>
+<span id="cb69-3"><a href="#cb69-3"></a>  value = entry.value()</span>
+<span id="cb69-4"><a href="#cb69-4"></a>  ...</span>
+<span id="cb69-5"><a href="#cb69-5"></a>}</span></code></pre></div></li>
+</ul>
+<p>Operator overloads:</p>
+<ul>
+<li><code>map[key]</code> – access an existing / add new value by
+key.<br />
+</li>
+<li><code>map[~key]</code> – remove an entry by key.<br />
+</li>
+<li><code>map[~] -&gt; Map</code> – clear the map.<br />
+</li>
+<li><code>map[do: Function] -&gt; Map</code> – iterate over the
+map.</li>
+</ul>
+<h1 id="iterable-classes">Iterable Classes</h1>
+<h2 id="mapping">Mapping</h2>
+<p>A class of objects produced by the
+<code>Iterable@map(Function) -&gt; Mapping</code> method.<br />
+Maps an <code>Iterable</code> into another <code>Iterable</code> by
+applying the supplied function to it.</p>
+<p>Methods:</p>
+<ul>
+<li><code>iterator() -&gt; MappingIterator</code> – produces an
+<code>Iterator</code> that applies the supplied function to each element
+of the <code>Iterable</code> being mapped.</li>
+</ul>
+<h2 id="filter">Filter</h2>
+<p>A class of objects produced by the
+<code>Iterable@filter(Function) -&gt; Filter</code> method.<br />
+Maps an <code>Iterable</code> into another <code>Iterable</code> by
+discarding elements that do not satisfy the supplied predicate.</p>
+<p>Methods:</p>
+<ul>
+<li><code>iterator() -&gt; FilterIterator</code> – produces an
+<code>Iterator</code> that applies the supplied predicate to each
+element of the <code>Iterable</code> being mapped and discards all
+elements for which its value is <code>false</code>.</li>
+</ul>
+<h2 id="intrange-floatrange">IntRange / FloatRange</h2>
+<p>A class of objects produced by the range built-in function and the
+range expression.<br />
+Represents an arbitrary numeric sequence.</p>
+<p>Methods:</p>
+<ul>
+<li><p><code>iterator() -&gt; RangeIterator</code> <em>@ Iterable</em> –
+produces an <code>Iterator</code> that iterates through every number in
+sequence.</p></li>
+<li><p><code>get_start() -&gt; Int / Float</code> – returns the
+<code>start</code> value of this <code>Range</code>.</p></li>
+<li><p><code>get_end() -&gt; Int / Float</code> – returns the
+<code>end</code> value of this <code>Range</code>.</p></li>
+<li><p><code>get_step() -&gt; Int / Float</code> – returns the
+<code>step</code> value of this <code>Range</code>.</p></li>
+</ul>
+<p><br></p>
+<h1 id="utility-classes">Utility Classes</h1>
+<h2 id="file">File</h2>
+<p>Constructor:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb70-1"><a href="#cb70-1"></a>file = new: File(path_str)</span></code></pre></div>
+<p>Methods:</p>
+<p>Read / Write Operations:</p>
+<ul>
+<li><p><code>open()</code> – open file for reading / writing.</p></li>
+<li><p><code>close()</code> – close file.</p></li>
+<li><p><code>read_line() -&gt; String</code> – read one line from file
+as string.<br />
+Sets <code>eof()</code> property to <strong>true</strong> if the end of
+file has been reached.</p></li>
+<li><p><code>write_line(line)</code> – write a string to file.</p></li>
+<li><p><code>read_contents() -&gt; String</code> – returns full contents
+of the managed file as string.<br />
+Doesn’t require the file to be <code>open()</code>’d.</p></li>
+<li><p><code>write_contents(str)</code> – writes the whole string
+<code>str</code> to file, deleting previous contents, if any.<br />
+Doesn’t require the file to be <code>open()</code>’d.</p></li>
+</ul>
+<p>Miscellaneous:</p>
+<ul>
+<li><p><code>set(path)</code> – sets the path of the file managed by
+this object.</p></li>
+<li><p><code>mkdirs()</code> – creates all non-existing directories in
+the managed path.</p></li>
+<li><p><code>cd()</code> – changes current working directory to the
+managed path.</p></li>
+<li><p><code>equivalent(path) -&gt; Boolean</code> – returns
+<code>true</code> if managed file path is equivalent to the specified
+path.</p></li>
+<li><p><code>copy_to(path)</code> – copies managed file to the specified
+path.</p></li>
+<li><p><code>extension() -&gt; Boolean</code> – returns the file’s
+extension.</p></li>
+<li><p><code>size() -&gt; Int</code> – returns file size in
+bytes.</p></li>
+<li><p><code>absolute_path() -&gt; String</code> – returns absolute path
+to the managed file.</p></li>
+<li><p><code>filename() -&gt; String</code> – returns filename of the
+managed file.</p></li>
+<li><p><code>is_dir() -&gt; Boolean</code> – returns <code>true</code>
+if this file is a directory.</p></li>
+<li><p><code>exists() -&gt; Boolean</code> – returns <code>true</code>
+if this file exists.</p></li>
+<li><p><code>for_each(Function action)</code> – iterates recursively
+through all files in directory described by the managed path, calling
+<code>action(file_name)</code> for each one of them.</p></li>
+<li><p><code>rename(new_name)</code> – renames managed file.</p></li>
+<li><p><code>remove()</code> – removes managed file from disk.</p></li>
+</ul>
+<p>Static Methods:</p>
+<ul>
+<li><code>cwd() -&gt; String</code> – returns path to the current
+working directory.</li>
+</ul>
+<p>Properties:</p>
+<ul>
+<li><code>eof() -&gt; Boolean</code> – is set only after calling read
+operations. <strong>True</strong> if the end of the managed file has
+been reached.</li>
+</ul>
+<p><br />
+! All <strong>File</strong> methods (that don’t modify the state of the
+object) can be invoked statically by specifying the path for invoked
+operation as the first argument, for example:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb71-1"><a href="#cb71-1"></a>File@exists(&quot;./foo/bar.txt&quot;)</span></code></pre></div>
+<h2 id="random">Random</h2>
+<p>Constructor:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb72-1"><a href="#cb72-1"></a>rnd = new: Random([Int seed])</span></code></pre></div>
+<p>If <code>seed</code> is not specified, a random one will be used.</p>
+<p>Methods:</p>
+<p>RNG Seeding:</p>
+<ul>
+<li><p><code>get_seed() -&gt; Int</code> – returns seed used by this
+rng.</p></li>
+<li><p><code>reseed(Int new_seed)</code> – re-seeds the rng with
+specified seed.</p></li>
+</ul>
+<p>Random Integer:</p>
+<ul>
+<li><p><code>next_int([Int n]) -&gt; Int</code> – returns next
+pseudo-random 64-bit integer. If <code>n</code> is specified, generated
+value will be in range <strong>[0; n)</strong>.</p></li>
+<li><p><code>next_int(Int a, Int b) -&gt; Int</code> – returns next
+pseudo-random integer in range <strong>[a; b]</strong>.</p></li>
+</ul>
+<p>Random Float:</p>
+<ul>
+<li><p><code>next_double([Float n]) -&gt; Float</code> – if
+<code>n</code> is not specified, returns next pseudo-random float in
+range <strong>[0; 1]</strong>. Otherwise, generated value will be in
+range <strong>[0; n)</strong>.</p></li>
+<li><p><code>next_double(Float a, Float b) -&gt; Float</code> – returns
+next pseudo-random float in range <strong>[a; b - 1]</strong>.</p></li>
+</ul>
+<p>Random Boolean:</p>
+<ul>
+<li><code>next_boolean([Float probability = 0.5]) -&gt; Boolean</code> –
+returns <code>true</code> with probability <code>probability</code> in
+range <strong>[0; 1]</strong>.</li>
+</ul>
+<p><br></p>
+<h1 id="modules">Modules</h1>
+<h2 id="module-api-legacy">Module API (Legacy)</h2>
+<p>The current module architecture is deprecated.</p>
+<p>Modules should use the <code>Library</code> loading and
+initialization mechanism.</p>
+<p>Modules are just shared libraries that define a special function
+<code>void init_methan0l_module(mtl::ExprEvaluator*)</code> to be able
+to hook up to the interpreter instance.<br />
+This function can be defined using the <code>INIT_MODULE</code> macro
+that is a part of the methan0l module API (defined in the
+<code>methan0l.h</code> header in the root source directory).<br />
+Modules can optionally define an initialization function via the
+<code>LOAD_MODULE {...}</code> macro.<br />
+Alternatively, functions can be bound to the interpreter even without
+the <code>LOAD_MODULE</code> entry point by using the
+<code>FUNCTION(name)</code> macro inside of the source file, where
+<code>name</code> is a name of an already declared function.<br />
+C++ classes can also be bound to methan0l classes via the
+<code>NativeClass&lt;...&gt;</code> helper or directly using the
+<code>ClassBinder&lt;...&gt;</code> class.</p>
+<p>You can see an example of module API usage (including
+<code>ClassBinder</code>) in <code>modules/test</code>.</p>
+<h2 id="loading-modules">Loading Modules</h2>
+<p>Load a Methan0l source file or a native module as a Box Unit:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb73-1"><a href="#cb73-1"></a>load(path_str_expr)</span></code></pre></div>
+<p>Loaded module can be assigned to a variable and its contents can be
+accessed via the <code>.</code> operator, as with regular Box Units:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb74-1"><a href="#cb74-1"></a>sys = load(&quot;system&quot;)</span>
+<span id="cb74-2"><a href="#cb74-2"></a>&lt;% sys.exec(&quot;ls -a&quot;)</span></code></pre></div>
+<p>Modules can also be imported into the current scope after
+loading:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb75-1"><a href="#cb75-1"></a>sys = load(&quot;system&quot;)</span>
+<span id="cb75-2"><a href="#cb75-2"></a>sys.import()</span></code></pre></div>
+<p>Or imported in-place via the <code>import</code> operator:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb76-1"><a href="#cb76-1"></a>import: &quot;system&quot;</span>
+<span id="cb76-2"><a href="#cb76-2"></a>import: &quot;test&quot;</span>
+<span id="cb76-3"><a href="#cb76-3"></a></span>
+<span id="cb76-4"><a href="#cb76-4"></a>&lt;% sys.exec(&quot;ls -a&quot;)</span>
+<span id="cb76-5"><a href="#cb76-5"></a>test()</span></code></pre></div>
+<h3 id="module-path-resolution">Module Path Resolution</h3>
+<p>Module paths are resolved in the following steps:</p>
+<ol type="1">
+<li>If supplied path exists</li>
+</ol>
+<ul>
+<li>If this is a path to a file, the module path is resolved.</li>
+<li>If this is a path to a directory, append its name to the supplied
+path and return to step 1.</li>
+</ul>
+<ol start="2" type="1">
+<li>If supplied path does not exist</li>
+</ol>
+<ul>
+<li>Try to resolve it as a Methan0l script file by appending the
+<code>.mt0</code> extension.</li>
+<li>Try to resolve it as a native shared library by appending the
+<code>.so</code> extension.</li>
+</ul>
+<ol start="3" type="1">
+<li>If supplied path is relative and does not exist</li>
+</ol>
+<ul>
+<li>Try to resolve it relative to the <code>modules</code> directory
+located in the interpreter home directory by prepending home path to the
+supplied path and returning to step 1.</li>
+</ul>
+<p><br></p>
+<h1 class="unnumbered" id="core-library">Core Library</h1>
+<h1 id="input-output-operators-functions-libio">Input / Output Operators
+&amp; Functions <code>[LibIO]</code></h1>
+<p>Input operator:<br />
+<code>%&gt; idfr</code></p>
+<p>String input function:<br />
+<code>read_line([prompt])</code> – read string from stdin and return it.
+The optional <code>prompt</code> argument will be converted to string
+and printed to the stdout before requesting user input, if supplied.</p>
+<p>Output operators:<br />
+<code>&lt;% expr</code> – print with trailing newline character<br />
+<code>%% expr</code> – print without a trailing newline character</p>
+<p><br></p>
+<h1 id="string-related-functions-libstring">String-related Functions
+<code>[LibString]</code></h1>
+<p>Radix conversion:</p>
+<p><code>to_base(String, Int dest_base, [Int src_base = 10]) -&gt; String</code>
+– returns a string representation of the provided numeric string
+converted from base <code>src_base</code> to base
+<code>dest_base</code>. This function automatically converts its first
+argument to string, so numeric values can be passed to it too.</p>
+<p><br></p>
+<h1 id="data-structure-operators-functions-libdata">Data Structure
+Operators &amp; Functions <code>[LibData]</code></h1>
+<h2 id="hashing-values-of-any-type">Hashing Values of Any Type</h2>
+<div class="sourceCode" id="cb77"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb77-1"><a href="#cb77-1"></a>hash_code: expr</span></code></pre></div>
+<p>Can be overloaded for classes via defining a <code>hash_code()</code>
+method.</p>
+<h2 id="deleting-values">Deleting Values</h2>
+<div class="sourceCode" id="cb78"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb78-1"><a href="#cb78-1"></a>delete: idfr</span></code></pre></div>
+<p>Delete the identifier from the data table (and the value associated
+with it if it’s a primitive or a heap-stored value with refcount == 0
+after identifier deletion).</p>
+<h2 id="type-operators">Type Operators</h2>
+<ul>
+<li><p><code>typeid: expr</code> – get <strong>typeid</strong> of
+value.<br />
+Can be used for type-checking.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb79-1"><a href="#cb79-1"></a>&lt;% typeid: &quot;foo&quot; == type string /* Prints &quot;true&quot; */</span></code></pre></div></li>
+<li><p><code>msg_expr assert: condition_expr</code></p></li>
+<li><p><code>expr require: type_expr, type_expr2, ...</code></p></li>
+<li><p><code>expr is: type_expr</code></p></li>
+</ul>
+<h2 id="type-conversion">Type Conversion</h2>
+<div class="sourceCode" id="cb80"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb80-1"><a href="#cb80-1"></a>expr.convert(type_expr)</span>
+<span id="cb80-2"><a href="#cb80-2"></a></span>
+<span id="cb80-3"><a href="#cb80-3"></a>/* Or via an operator: */</span>
+<span id="cb80-4"><a href="#cb80-4"></a></span>
+<span id="cb80-5"><a href="#cb80-5"></a>expr to: type_expr</span></code></pre></div>
+<p>Here <code>type_expr</code> can be a type name, a string, or a
+numeric type id (that was obtained via a type reference expression or by
+invoking the <code>class_id()</code> method of an object).<br />
+Converts the value of the expression on the left hand side to specified
+type, for example:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb81-1"><a href="#cb81-1"></a>bool = &quot;true&quot;.convert(Boolean)</span>
+<span id="cb81-2"><a href="#cb81-2"></a>str = 1337.convert(String)</span>
+<span id="cb81-3"><a href="#cb81-3"></a>dbl = &quot;-1.234&quot;.convert(Double)</span>
+<span id="cb81-4"><a href="#cb81-4"></a>set = $(123, 234, 345).convert(Set)</span></code></pre></div>
+<h2 id="variadic-function-arguments">Variadic Function Arguments</h2>
+<div class="sourceCode" id="cb82"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb82-1"><a href="#cb82-1"></a>args = get_args()</span></code></pre></div>
+<p>Can be called from inside a function’s body to get a list of all
+arguments passed to it, including extra arguments not defined in the
+function’s parameter list.</p>
+<h2 id="command-line-arguments">Command Line Arguments</h2>
+<div class="sourceCode" id="cb83"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb83-1"><a href="#cb83-1"></a>get_launch_args()</span></code></pre></div>
+<p>Get command line args passed to the currently running Methan0l
+program.</p>
+<h2 id="range-1">Range</h2>
+<p>Create a <code>Range</code> iterable object (an <code>IntRange</code>
+or a <code>FloatRange</code> depending on argument types):</p>
+<p>Range <strong>[0, n)</strong>:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb84-1"><a href="#cb84-1"></a>range(Int n) -&gt; Range</span></code></pre></div>
+<p><br />
+Range <strong>[start, n)</strong>:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb85-1"><a href="#cb85-1"></a>range(Int start, n) -&gt; Range</span></code></pre></div>
+<p><br />
+Range <strong>[start, start + step, …, n)</strong>:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb86-1"><a href="#cb86-1"></a>range(Int start, Int n, Int step) -&gt; Range</span></code></pre></div>
+<p><br></p>
+<h1 id="internal-functions-libinternal">Internal Functions
+<code>[LibInternal]</code></h1>
+<h2 id="get-environment-info">Get Environment Info</h2>
+<ul>
+<li><p><code>get_os_name() -&gt; String</code></p></li>
+<li><p><code>get_arch() -&gt; String</code></p></li>
+<li><p><code>get_rundir() -&gt; String</code> – get path to the working
+directory from which the interpreter (or a program that uses the
+interpreter in embedded setting) has been launched.</p></li>
+<li><p><code>get_runpath() -&gt; String</code> – same as previous
+function, but with binary name appended.</p></li>
+<li><p><code>get_home_dir() -&gt; String</code> – get path to the
+interpreter home directory.</p></li>
+<li><p><code>get_bin_path() -&gt; String</code> – get path to the binary
+using the interpreter.</p></li>
+</ul>
+<h2 id="heap-related-functions">Heap-related Functions</h2>
+<ul>
+<li><p><code>mem_in_use() -&gt; Int</code>,
+<code>max_mem() -&gt; Int</code> – get current heap state.</p></li>
+<li><p><code>set_max_mem(Int)</code> – set max heap capacity.</p></li>
+<li><p><code>mem_info()</code> – print current heap state.</p></li>
+<li><p><code>enforce_mem_limit(Boolean)</code> – toggle either to throw
+an exception when exceeding the max heap capacity or not.</p></li>
+</ul>
+<h2 id="methan0l-version-info">Methan0l Version Info</h2>
+<ul>
+<li><p><code>get_version() -&gt; String</code> – returns version
+string</p></li>
+<li><p><code>get_version_code() -&gt; Int</code> – returns interpreter
+version code. Negative for unstable versions.</p></li>
+<li><p><code>get_minor_version() -&gt; Int</code></p></li>
+<li><p><code>get_release_version() -&gt; Int</code></p></li>
+<li><p><code>get_major_version() -&gt; Int</code></p></li>
+</ul>
+<h2 id="unit-related-functions-operators-libunit">Unit-related Functions
+&amp; Operators <code>[LibUnit]</code></h2>
+<p><code>sync_work_dir()</code> – change working directory to the
+location of currently running script</p>
+<h2 id="persistence">Persistence</h2>
+<p><code>unit.make_box()</code> – get a persistent copy of Unit
+(preserves Unit’s data table after the execution)</p>
+<h2 id="check-if-current-unit-is-the-programs-entry-point">Check if
+current Unit is the program’s entry point</h2>
+<p><code>is_main_unit()</code> – true if unit currently being executed
+is at the bottom of the execution stack</p>
+<h2 id="execution-control">Execution Control</h2>
+<ul>
+<li><p><code>exit()</code> – stop program execution.</p></li>
+<li><p><code>die(expr)</code> – throw an exception <code>expr</code>
+that can be caught by a try-catch statement.</p></li>
+<li><p><code>err(msg)</code> – print <code>msg</code> to
+stderr.</p></li>
+<li><p><code>pause(msecs)</code> – pauses execution for at least
+<code>msecs</code> milliseconds.</p></li>
+<li><p><code>selfinvoke(...)</code> – can be used from inside a
+function’s body to recursively call it.</p></li>
+<li><p><code>unit.local(action)</code> – execute <code>action</code>
+inside <code>unit</code>’s scope.<br />
+If <code>unit</code> is <strong>non-persistent</strong>, it’s executed
+first and <code>action</code> is executed after it. <code>unit</code>’s
+data table is then cleared as if after a regular execution.</p></li>
+</ul>
+<h2 id="benchmark">Benchmark</h2>
+<p><code>measure_time(expr)</code> – returns time spent on evaluation of
+<code>expr</code> in milliseconds, discarding the result, if any.</p>
+<h2 id="reflection-1">Reflection</h2>
+<p><strong>Get a reference to identifier’s value by name:</strong></p>
+<ul>
+<li><p><code>unit.value(&quot;idfr_name&quot;)</code> or
+<code>unit[&quot;idfr_name&quot;]</code> – performs lookup in <code>unit</code>’s
+scope.</p></li>
+<li><p><code>value(&quot;idfr_name&quot;)</code> – global scope lookup.</p></li>
+</ul>
+<p><br></p>
+<h1 id="common-math-functions-libmath">Common Math Functions
+<code>[LibMath]</code></h1>
+<h2 id="trigonometry">Trigonometry</h2>
+<ul>
+<li><p><code>rad(Float deg) -&gt; Float</code> – convert degrees to
+radians.</p></li>
+<li><p><code>deg(Float rad) -&gt; Float</code> – convert radians to
+degrees.</p></li>
+<li><p><code>sin(Float rad) -&gt; Float</code></p></li>
+<li><p><code>cos(Float rad) -&gt; Float</code></p></li>
+<li><p><code>tan(Float rad) -&gt; Float</code></p></li>
+<li><p><code>acos(Float x) -&gt; Float</code></p></li>
+<li><p><code>asin(Float x) -&gt; Float</code></p></li>
+<li><p><code>atan(Float x) -&gt; Float</code></p></li>
+<li><p><code>atan2(Float x, Float y) -&gt; Float</code></p></li>
+</ul>
+<h2 id="power-functions">Power functions</h2>
+<ul>
+<li><p><code>pow(Float/Int x, Float/Int n) -&gt; Float/Int</code></p></li>
+<li><p><code>sqrt(Float x) -&gt; Float</code></p></li>
+</ul>
+<h2 id="exponential-and-logarithmic-functions">Exponential and
+Logarithmic Functions</h2>
+<ul>
+<li><p><code>exp(Float x) -&gt; Float</code></p></li>
+<li><p><code>log(Float x) -&gt; Float</code></p></li>
+<li><p><code>log10(Float x) -&gt; Float</code></p></li>
+<li><p><code>logn(Float base, Float x) -&gt; Float</code></p></li>
+</ul>
+<h2 id="rounding">Rounding</h2>
+<ul>
+<li><p><code>ceil(Float x) -&gt; Float</code></p></li>
+<li><p><code>floor(Float x) -&gt; Float</code></p></li>
+<li><p><code>round(Float flt, Int n) -&gt; Float</code> - round
+<code>flt</code> to <code>n</code> decimal places</p></li>
+</ul>
+<h2 id="absolute-value">Absolute Value</h2>
+<ul>
+<li><code>abs(Float/Int x) -&gt; Float/Int</code></li>
+</ul>
+<p><br></p>
+<h1 class="unnumbered" id="standard-modules">Standard Modules</h1>
+<h1 id="system">System</h1>
+<div class="sourceCode" id="cb87"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb87-1"><a href="#cb87-1"></a>import: &quot;system&quot;</span></code></pre></div>
+<ul>
+<li><p><code>exec(str) -&gt; Pair</code> – execute <code>str</code> as a
+system shell command. Returns a pair of
+<code>{stdout_str, return_value}</code>.</p></li>
+<li><p><code>get_env(name) -&gt; String</code> – get value of a system
+environment variable.</p></li>
+</ul>
+<h1 id="ncurses">Ncurses</h1>
+<div class="sourceCode" id="cb88"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb88-1"><a href="#cb88-1"></a>import: &quot;ncurses&quot;</span></code></pre></div>
+<p>Partial libncurses bindings.</p>
+</main>
+
+<script>
+;(function() {
+  // Non-essential if user has JavaScript off. Just makes checkboxes look nicer.
+  var selector = '.task-list > li > input[type="checkbox"]';
+  var checkboxes = document.querySelectorAll(selector);
+  Array.from(checkboxes).forEach((checkbox) => {
+    var wasChecked = checkbox.checked;
+    checkbox.disabled = false;
+    checkbox.addEventListener('click', (ev) => {ev.target.checked = wasChecked});
+  });
+})();
+</script>
+</body>
+</html>

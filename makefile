@@ -18,7 +18,7 @@ all: $(OUT_FILES)
 	  --css=pandoc/skylighting-solarized-theme.css \
 	  --template=pandoc/template.html5 \
 	  --toc \
-	  --metadata-file=pandoc/meta.yaml \
+	  --metadata-file=$(patsubst %.tmp,%.yaml,$<) \
 	  $< -o $@
 
 clean:
